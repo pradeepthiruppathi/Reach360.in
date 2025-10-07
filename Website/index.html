@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reach 360 | Your Digital Partner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans_serif: ['sans-serif'],
+            outfit: ['Outfit', 'Outfit Placeholder', 'sans-serif'],
+            poppins: ['Poppins', 'Poppins Placeholder', 'sans-serif'],
+            europa_grotesk_sh: ['Europa Grotesk SH', 'Europa Grotesk SH Placeholder', 'sans-serif'],
+            plus_jakarta_sans: ['Plus Jakarta Sans', 'Plus Jakarta Sans Placeholder', 'sans-serif'],
+            satoshi: ['Satoshi', 'Satoshi Placeholder', 'sans-serif'],
+            instrument_serif: ['Instrument Serif', 'Instrument Serif Placeholder', 'serif'],
+            affigere: ['Affigere', 'sans-serif'],
+            inter: ['Inter', 'Inter Placeholder', 'sans-serif'],
+            inter_display: ['Inter Display', 'Inter Display Placeholder', 'sans-serif'],
+            anton: ['Anton', 'Anton Placeholder', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', 'Inter', Arial, sans-serif;
+    }
+ 
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 1s cubic-bezier(.4,0,.2,1) both;
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.8);}
+      60% { opacity: 1; transform: scale(1.05);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+    .animate-bounceIn {
+      animation: bounceIn 1.1s cubic-bezier(.4,0,.2,1) both;
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(-18px);}
+    }
+    .animate-floatY {
+      animation: floatY 3s ease-in-out infinite;
+    }
+    @keyframes floatX {
+      0%, 100% { transform: translateX(0);}
+      50% { transform: translateX(18px);}
+    }
+    .animate-floatX {
+      animation: floatX 3.5s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(139,92,246,0.5);}
+      50% { box-shadow: 0 0 32px 8px rgba(139,92,246,0.25);}
+    }
+    .animate-pulseGlow {
+      animation: pulseGlow 2.5s infinite;
+    }
+    body {
+    background: url('https://c.animaapp.com/mgajcqihbAzZMI/assets/35.png') center top/cover no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed; /* optional: makes it stay when scrolling */
+    }
+
+    
+
+  </style>
+</head>
+<body class="bg-grid min-h-screen relative overflow-x-hidden font-poppins">
+  <!-- Responsive Navbar -->
+<nav class="mx-auto mt-12 w-full max-w-5xl rounded-2xl flex items-center justify-between px-8 py-4 bg-black/40 backdrop-blur-lg border border-white/10 z-10 relative shadow-lg animate-fadeInUp" style="animation-delay:0.1s">
+  <!-- Left: Logo -->
+  <div class="flex items-center gap-3">
+    <img src="https://framerusercontent.com/images/YgmDxf6T8qUKNs1DYOdmviLfKEI.png?scale-down-to=512&width=851&height=817" 
+      alt="Reach 360 Logo" class="h-16 animate-bounceIn" style="animation-delay:0.2s">
+    <div>
+      <div class="text-white font-bold text-xl leading-tight font-europa_grotesk_sh">REACH 360</div>
+      <div class="text-xs text-white/50 tracking-widest uppercase font-inter">Your Digital Partner</div>
+    </div>
+  </div>
+
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex items-center gap-8 font-semibold text-lg">
+    <li><a href="index.html" class="text-white hover:text-violet-400 transition animate-bounceIn font-plus_jakarta_sans" style="animation-delay:0.3s;">Home</a></li>
+    <li><a href="#about" class="text-white hover:text-violet-400 transition animate-bounceIn font-plus_jakarta_sans" style="animation-delay:0.35s;">About Us</a></li>
+    <li class="relative group">
+      <a href="#Services" class="text-white hover:text-violet-400 transition flex items-center gap-1 animate-fadeInUp font-plus_jakarta_sans" style="animation-delay:0.4s">
+        Services
+        <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+      </a>
+    </li>
+    <li><a href="#" class="text-white hover:text-violet-400 transition animate-bounceIn font-plus_jakarta_sans" style="animation-delay:0.45s;">Contact Us</a></li>
+  </ul>
+
+  <!-- CTA Button (Desktop) -->
+  <a href="https://wa.me/9443394439?text=Hello%20there!" 
+    class="hidden md:inline-block ml-6 px-6 py-2 rounded-lg bg-white text-violet-700 font-bold text-lg shadow hover:bg-violet-600 hover:text-white transition border border-violet-400 animate-bounceIn font-plus_jakarta_sans" 
+    style="animation-delay:0.5s">Reach Us</a>
+
+  <!-- Hamburger Icon (Mobile) -->
+  <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+    &#9776;
+  </button>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/90 backdrop-blur-lg border-t border-white/10 flex flex-col items-center space-y-4 py-6 md:hidden animate-fadeInDown">
+    <a href="index.html" class="text-white text-lg font-semibold hover:text-violet-400 transition font-plus_jakarta_sans">Home</a>
+    <a href="#about" class="text-white text-lg font-semibold hover:text-violet-400 transition font-plus_jakarta_sans">About Us</a>
+    <a href="#" class="text-white text-lg font-semibold hover:text-violet-400 transition font-plus_jakarta_sans">Services</a>
+    <a href="#" class="text-white text-lg font-semibold hover:text-violet-400 transition font-plus_jakarta_sans">Contact Us</a>
+    <a href="https://wa.me/9443394439?text=Hello%20there!" class="px-6 py-2 rounded-lg bg-white text-violet-700 font-bold text-lg shadow hover:bg-violet-600 hover:text-white transition border border-violet-400 font-plus_jakarta_sans">Reach Us</a>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('hidden', !menuOpen);
+  });
+
+  // Close menu on scroll
+  window.addEventListener('scroll', () => {
+    if (menuOpen) {
+      menuOpen = false;
+      mobileMenu.classList.add('hidden');
+    }
+  });
+</script>
+
+<style>
+  /* Smooth fade-in-down animation for mobile menu */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInDown {
+    animation: fadeInDown 0.4s ease forwards;
+  }
+</style>
+
+  <section
+  class="relative flex flex-col md:flex-row items-center justify-between px-8 pt-24 pb-12 max-w-7xl mx-auto z-10"
+  
+>
+  <div class="flex-1 z-10">
+    <h1 class="text-white font-extrabold text-[5rem] md:text-[6rem] leading-[1.05] mb-6 font-outfit animate-fadeInUp" style="animation-delay:0.2s"style="text-shadow: 2px 2px 4px black;">
+      <span class="block" style="text-shadow: 2px 2px 4px black;">Your Success</span>
+      <span class="block" style="text-shadow: 2px 2px 4px black;">Our Strategy</span>
+    </h1>
+    <p class="text-white text-[2.2rem] md:text-[2.7rem] font-poppins font-semibold mb-4 animate-fadeInUp" style="animation-delay:0.35s">
+      Elevate Your Digital Presence
+    </p>
+    <p class="text-white text-[2.1rem] md:text-[2.7rem] font-poppins font-semibold mb-4 animate-fadeInUp" style="animation-delay:0.4s">
+      With <span class="text-fuchsia-500 font-bold font-plus_jakarta_sans">Reach 360</span>
+    </p>
+    <a href="https://wa.me/9443394439?text=Hello%20there!" class="inline-block mt-6 px-8 py-4 rounded-full bg-white text-black font-semibold text-xl shadow hover:bg-violet-600 hover:text-white transition animate-bounceIn font-plus_jakarta_sans" style="animation-delay:0.5s">Book A Free Call</a>
+  </div>
+  <div class="flex-1 flex items-center justify-center relative z-10 mt-12 md:mt-0">
+    <div class="relative w-[600px] h-[600px]">
+      <!-- Main Illustration (bigger, floating) -->
+      <img src="https://drive.google.com/file/d/1MQEedq_q4iOGijmlMdb7v66yZ_5H007-/view?usp=drive_link"
+        alt="Main Illustration"
+        class="absolute left-0 top-0 w-full h-full object-contain z-0 animate-floatY"
+        style="animation-delay:0.2s">
+      <!-- Analytics Card (bottom left, floating X) -->
+      <img src="../Icons/Nav/analytics-card.avif"
+        alt="Analytics Card"
+        class="absolute left-[-110px] bottom-[-40px] w-48 h-38 animate-floatX"
+        style="animation-delay:0.5s">
+      <!-- Search Engine Card (top right, floating X) -->
+      <img src="../Icons/Nav/search-engine-card.avif"
+        alt="Search Engine Card"
+        class="absolute right-[-80px] top-[-30px] w-40 h-40 animate-floatX"
+        style="animation-delay:0.7s">
+    </div>
+  </div>
+</section>
+<div>
+  
+</div>
+<section class="w-full flex flex-col items-center justify-center mt-4 z-10 relative">
+  <span class="text-white/80 text-lg font-medium font-inter mb-2">Trusted By</span>
+
+  <!-- Wrapper with gradient mask -->
+  <div class="w-full relative overflow-hidden py-4" style="min-height:150px;">
+    <div class="flex flex-row items-center gap-20 px-4 animate-scroll-logos"
+         style="width: max-content;">
+      <img src="../Client Logos/Meesaya Murukku.PNG" alt="Moesqua Murruku" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Ram Chandra.png" alt="Ramchand City Developers" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Birds.PNG" alt="Saras Birds & Exotic Animal Hospital" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Brindha.PNG" alt="Brindha Skin & Hair Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/RATHNA (1).png" alt="Rathna's Pet Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Shree selvi.png" alt="Shree Selvi Properties" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
+      <!-- duplicate logos for seamless loop -->
+      <img src="../Client Logos/Meesaya Murukku.PNG" alt="Moesqua Murruku" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Ram Chandra.png" alt="Ramchand City Developers" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Birds.PNG" alt="Saras Birds & Exotic Animal Hospital" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Brindha.PNG" alt="Brindha Skin & Hair Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/RATHNA (1).png" alt="Rathna's Pet Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
+      <img src="../Client Logos/Shree selvi.png" alt="Shree Selvi Properties" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
+    </div>
+
+
+    <!-- Gradient overlay for fade effect -->
+    <div class="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-[#000] to-transparent pointer-events-none"></div>
+    <div class="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-[#000] to-transparent pointer-events-none"></div>
+  </div>
+
+  <style>
+    /* Marquee animation */
+    @keyframes scroll-logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll-logos {
+      display: flex;
+      animation: scroll-logos 20s linear infinite;
+    }
+
+    .animate-scroll-logos:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</section>
+<!-- ======= OUR SERVICES SECTION START ======= -->
+<section class="services-section" id="Services">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+
+    body {
+      background-image: url('https://framerusercontent.com/images/v8MbOuq9nnmXqHSdIUVaDl1Usg.png?scale-down-to=1024&width=1175&height=677');
+    }
+
+    .services-section {
+      position: relative;
+      background: radial-gradient(circle at left, #200022, #000);
+      color: #fff;
+      padding: 100px 80px;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Neon Grid Overlay */
+    .services-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(to right, rgba(30, 0, 51, 0.12) 0, rgba(150, 0, 255, 0.12) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0, rgba(150, 0, 255, 0.12) 1px, transparent 1px, transparent 80px);
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .services-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
+
+    .services-header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #fff;
+      flex: 1;
+      min-width: 300px;
+      margin: 0;
+    }
+
+    .services-header p {
+      flex: 2;
+      font-weight: 600;
+      color: #eaeaea;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      text-align: right;
+      min-width: 320px;
+      max-width: 600px;
+    }
+
+    /* Cards Layout using Grid */
+    .services-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px; /* reduced horizontal gap */
+      row-gap: 80px; /* keep vertical gap large */
+      justify-items: center;
+      align-items: stretch;
+    }
+
+    .service-card {
+      background: url('https://framerusercontent.com/images/tTAcQ5nkXFMzGPvVILoHywlztE.jpg?scale-down-to=512&width=1280&height=720') center/cover no-repeat;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 370px;
+      padding: 40px 25px;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(120, 0, 255, 0.1);
+      position: relative;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .service-card img {
+      width: 110px;
+      height: 130px;
+      position: absolute;
+      top: -55px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 0 15px rgba(27, 0, 49, 0.8));
+      background: none;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #d8d8d8;
+      line-height: 1.8;
+      font-weight: 400;
+      text-shadow: 2px 2px 4px black;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Add delay for each card */
+    .service-card:nth-child(1) { animation-delay: 0.2s; }
+    .service-card:nth-child(2) { animation-delay: 0.4s; }
+    .service-card:nth-child(3) { animation-delay: 0.6s; }
+    .service-card:nth-child(4) { animation-delay: 0.8s; }
+    .service-card:nth-child(5) { animation-delay: 1s; }
+
+    /* Hover effect */
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(19, 0, 41, 0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-section {
+        padding: 80px 40px;
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+      }
+
+      .services-header p {
+        text-align: left;
+      }
+
+      .services-cards {
+        grid-template-columns: 1fr;
+        row-gap: 30px; /* nice spacing vertically */
+      }
+    }
+  </style>
+
+  <div class="services-container">
+    <div class="services-header">
+      <h1>Our Services</h1>
+      <p style="text-align: justify;">
+        We specialize in crafting bold, memorable designs and strategies that bring brands to life.
+        From self-branding to content creation and SEO, marketing campaigns.
+      </p>
+    </div>
+
+    <div class="services-cards">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <img src="../Icons/Personal_Branding.webp" alt="Personal Branding"><br><br><br><br>
+        <h3>Personal Branding</h3>
+        <p>
+          ✱ We help you show your true self with confidence.<br>
+          ✱ Your story deserves to be seen and valued.<br>
+          ✱ We guide you to create a lasting impression.<br>
+          ✱ Stand out for who you really are, not just what you do.<br>
+          ✱ We make it easier for people to remember and trust you.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="service-card">
+        <img src="../Icons/Influencer_Marketing.webp" alt="Influencer Marketing"><br><br><br><br>
+        <h3>Influencer Marketing</h3>
+        <p>
+          ✱ We have a strong network of trusted influencers in many niches.<br>
+          ✱ Our team quickly connects your brand with the right influencers.<br>
+          ✱ Influencers act as real brand supporters, building trust and reach.<br>
+          ✱ We create review videos and collaborations that attract the right audience.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card">
+        <img src="../Icons/Social_Media_Marketing.webp" alt="Social Media Management"><br><br><br><br>
+        <h3>Social Media Management</h3>
+        <p>
+          ✱ Content creation from strategy to visuals.<br>
+          ✱ Social media management (reels, stories, daily posts).<br>
+          ✱ Scriptwriting & creative ideation.<br>
+          ✱ Audience engagement (responding, interacting, growing organically).<br>
+          ✱ Video production (shooting & editing).
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="service-card">
+        <img src="../Icons/SEO.webp" alt="Search Engine Optimization"><br><br><br><br>
+        <h3>Search Engine Optimization</h3>
+        <p>
+          ✱ Boost your visibility, rank higher, grow faster.<br>
+          ✱ Smart SEO that drives real business results.<br>
+          ✱ From keywords to conversions — we optimize it all.<br>
+          ✱ Climb search rankings, stay ahead of competitors.<br>
+          ✱ More traffic. More leads. More growth.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="service-card">
+        <img src="../Icons/Lead.webp" alt="Lead Generation"><br><br><br><br>
+        <h3>Lead Generation</h3>
+        <p>
+          ✱ We design and develop responsive, visually appealing websites that reflect your brand.<br>
+          ✱ We create targeted campaigns using landing pages, ads, and automation tools.<br>
+          ✱ Our goal is to attract, capture, and convert high-quality leads for your business.<br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======= OUR SERVICES SECTION END ======= -->
+
+
+<!-- ======= DIGITAL MARKETING SECTION START ======= -->
+<section class="digital-marketing-section">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    .digital-marketing-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+
+  /* Background image overlay */
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)),
+              url('https://static.vecteezy.com/system/resources/thumbnails/053/203/062/small_2x/halftone-gradient-background-in-vibrant-pink-and-purple-tones-dynamic-dots-fading-diagonally-over-a-dark-backdrop-modern-abstract-design-vector.jpg') no-repeat center center/cover;
+}
+
+
+    .dm-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding-right: 40px;
+    }
+
+    .dm-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .dm-text {
+      flex: 1;
+    }
+
+    .dm-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .dm-text p {
+      font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
+
+    .dm-text p span {
+      color: #9b00ff; /* accent color to match the image highlight */
+      font-weight: 600;
+    }
+
+    @media (max-width: 1024px) {
+      .digital-marketing-section {
+        flex-direction: column;
+        padding: 50px 5%;
+      }
+
+      .dm-image {
+        padding-right: 0;
+        margin-bottom: 30px;
+      }
+
+      .dm-text h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
+  <div class="dm-image">
+    <img src="https://cdn.elearningindustry.com/wp-content/uploads/2022/06/Essential-B2B-Marketing-Strategies-To-Grow-Your-Business.png" alt="Digital Marketing">
+  </div>
+
+  <div class="dm-text" style="text-align: justify;">
+    <h2>Why Your Business Need Digital Marketing Services?</h2>
+    <p>In today's digital-first world, having a strong online presence is no longer optional—it's essential for business growth and success. With the right digital marketing strategies, you can effectively connect with your audience, build trust, and stay ahead in a highly competitive market.</p>
+    <p>At <span>Reach360</span>, a leading digital marketing agency in Trichy, we specialize in elevating tailored solutions that bring measurable results. From boosting your online reach to driving meaningful customer engagement, we help your brand grow stronger in the digital landscape. Take the first step toward transforming your business with <span>Reach360</span> today.</p>
+  </div>
+</section>
+<!-- ======= DIGITAL MARKETING SECTION END ======= -->
+
+
+ <!-- ======= TARIFF SECTION START ======= -->
+<section class="tariff-section">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    @font-face {
+      font-family: "Geist";
+      src: url("https://assets.codepen.io/605876/GeistVF.ttf") format("truetype");
+    }
+
+    .tariff-section {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top right, #0a0a14, #000);
+    }
+
+    /* ===== Animated Gradient Background ===== */
+    .tariff-section .el {
+      position: absolute;
+      inset: 0;
+      background: conic-gradient(
+        from 180deg at 50% 70%,
+        hsla(0, 0%, 98%, 1) 0deg,
+        #eec32d 72deg,
+        #ec4b4b 144deg,
+        #709ab9 216deg,
+        #4dffbf 288deg,
+        hsla(0, 0%, 98%, 1) 360deg
+      );
+      mask: radial-gradient(circle at 50% 50%, white 2px, transparent 2.5px) 50% 50% / 20px 20px,
+            url("https://assets.codepen.io/605876/noise-mask.png") 256px 50% / 256px 256px;
+      mask-composite: intersect;
+      animation: flicker 20s infinite linear;
+      opacity: 0.1; /* Keep subtle to not overpower text */
+      z-index: 0;
+    }
+
+    @keyframes flicker {
+      to {
+        mask-position: 50% 50%, 0 50%;
+      }
+    }
+
+    /* ===== Tariff Content ===== */
+    .tariff-section h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      animation: fadeInDown 1.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tariff-toggle {
+      display: inline-flex;
+      background: #111122;
+      border-radius: 50px;
+      padding: 5px;
+      margin-bottom: 50px;
+      box-shadow: 0 0 10px rgba(138, 102, 255, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .tariff-toggle button {
+      background: transparent;
+      border: none;
+      color: #aaa;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tariff-toggle button.active {
+      background: linear-gradient(90deg, #8a66ff, #6f9bff);
+      color: #fff;
+    }
+
+    .tariff-cards {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 40px;
+      animation: fadeInUp 1.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tariff-card {
+      background: linear-gradient(160deg, #0c0c1c, #15152e);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(138, 102, 255, 0.1);
+      padding: 30px 25px;
+      flex: 1 1 300px;
+      max-width: 350px;
+      transition: all 0.3s ease;
+    }
+
+    .tariff-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(138, 102, 255, 0.3);
+    }
+
+    .tariff-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .tariff-card p {
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    .tariff-card a {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #512FEB;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    .tariff-card ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    .tariff-card ul li {
+      padding: 8px 0;
+      font-size: 0.9rem;
+      color: #ccc;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .tariff-card ul li::before {
+      content: "✔";
+      color: #7a50ff;
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+    }
+
+    .know-more-btn {
+      background: linear-gradient(90deg, #8a66ff, #6f9bff);
+      border: none;
+      color: #fff;
+      padding: 12px 35px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .know-more-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(138, 102, 255, 0.6);
+    }
+
+    @media (max-width: 1024px) {
+      .tariff-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <!-- Animated Background Layer -->
+  <div class="el"></div>
+
+  <h1>Our Tariffs</h1>
+
+  <div class="tariff-toggle">
+    <button class="active">Annually</button>
+    <button>Monthly</button>
+  </div>
+
+  <div class="tariff-cards">
+    <!-- Basic Plan -->
+    <div class="tariff-card">
+      <h2>Basic</h2>
+      <p>Perfect for start-ups and individuals</p>
+      <a href="https://wa.me/9443394439?text=Hi%2C%20could%20you%20share%20details%20about%20the%20Reach%20360%20Basic%20Plan%3F" target="_blank">
+        Go with this plan →
+      </a>
+      <br><br>
+      <ul>
+        <li>Organic content creation</li>
+        <li>Basic video shoot & edit</li>
+        <li>Daily social media management</li>
+        <li>E-mail support</li>
+        <li>Regular reels, stories, and posts</li>
+      </ul>
+    </div>
+
+    <!-- Professional Plan -->
+    <div class="tariff-card">
+      <h2>Professional</h2>
+      <p>Ideal for growing businesses</p>
+      <a href="https://wa.me/9443394439?text=Hi%2C%20could%20you%20share%20details%20about%20the%20Reach%20360%20Professional%20Plan%3F" target="_blank">
+        Go with this plan →
+      </a>
+      <br><br>
+      <ul>
+        <li>All Tier 1 benefits</li>
+        <li>Pro camera shoots & editing</li>
+        <li>Logo & custom thumbnail design</li>
+        <li>Unique story-driven content</li>
+        <li>AI auto-replies + comment tools</li>
+        <li>Basic lead generation support</li>
+      </ul>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="tariff-card">
+      <h2>Enterprises</h2>
+      <p>Comprehensive solutions tailored for large-scale business success.</p>
+      <a href="https://wa.me/9443394439?text=Hi%2C%20could%20you%20share%20details%20about%20the%20Reach%20360%20Enterprise%20Plan%3F" target="_blank">
+        Schedule a call →
+      </a>
+      <br><br>
+      <ul>
+        <li>All Tier 1 & 2 benefits</li>
+        <li>Cinematic video production</li>
+        <li>Weekly trend-based brand review</li>
+        <li>AI chat automation</li>
+        <li>Full influencer management</li>
+        <li>Personalized lead generation</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="Tiers.html" class="know-more-btn">Know More →</a>
+</section>
+<!-- ======= TARIFF SECTION END ======= -->
+
+<!-- ======= INTRO VIDEO SECTION  ======= -->
+
+<section class="w-full flex justify-center items-center py-24 bg-transparent relative z-10">
+  <div class="relative w-[1400px] max-w-[95vw] h-[700px] 
+              bg-gradient-to-br from-[#0e5a8a] via-[#1a7cae] to-[#0e5a8a] 
+              rounded-[2.5rem] shadow-2xl overflow-hidden flex items-center justify-center">
+    
+    <!-- Responsive Video -->
+    <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-[2.5rem] shadow-2xl">
+      <!-- Desktop Video -->
+      <source src="https://framerusercontent.com/assets/RvcJYPZAYDPYSQI4RuNq0cdZVHs.mp4" type="video/mp4" media="(min-width: 768px)">
+      <!-- Mobile Video -->
+      <source src="https://framerusercontent.com/assets/iO9mxNnQRKLVwitWtMw4bVp9Fw.mp4" type="video/mp4" media="(max-width: 767px)">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Optional Overlay Label -->
+    <span class="absolute bottom-5 left-1/2 -translate-x-1/2 text-5xl font-bold tracking-wide text-[#ff9900] text-shadow-lg">
+    </span>
+  </div>
+</section>
+
+<!-- ======= INTRO VIDEO SECTION  ======= -->
+
+</section>
+<!-- ======= About Us ======= -->
+<div id="about">
+  <section
+    class="relative w-full min-h-[700px] flex flex-col justify-center items-center py-24 z-10"
+    style="background: linear-gradient(180deg,rgba(80,0,120,0.25) 0%,rgba(0,0,0,0.95) 100%);"
+  >
+    <!-- Background grid overlay -->
+    <div
+      class="absolute inset-0 pointer-events-none z-0"
+      style="background-image: linear-gradient(135deg,rgba(120,0,255,0.13) 1px,transparent 1px),
+             linear-gradient(45deg,rgba(120,0,255,0.13) 1px,transparent 1px);
+             background-size:80px 80px;"
+    ></div>
+
+    <!-- Main content -->
+    <div
+      class="relative z-10 max-w-7xl w-full mx-auto flex flex-col md:flex-row md:items-start md:justify-between px-6 md:px-12"
+    >
+      <!-- Left Text -->
+      <div class="flex-1 flex flex-col justify-center md:justify-start mt-12 md:mt-24">
+        <h2 class="text-white font-extrabold text-5xl md:text-7xl leading-tight mb-6 font-outfit">
+          The Results Speak<br />For Themselves
+        </h2>
+        <p
+          class="text-white/80 font-semibold text-[0.98rem] md:text-base max-w-lg mb-2 uppercase tracking-tight leading-tight font-poppins"
+          style="line-height:1.4;"
+        >
+          We’re Not Just A Digital Marketing Agency, We’re Your Partner In Achieving Measurable
+          Growth. With Our Tailored Strategies And Cutting-Edge Tools, We’ve Built A Legacy Of
+          Success.
+        </p>
+      </div>
+
+      <!-- About Us Heading & Button -->
+      <div class="flex flex-col items-center md:items-end mt-10 md:mt-24">
+        <h1 class="text-white font-extrabold text-6xl md:text-7xl font-outfit mb-6">
+          About <span class="text-[#b18cff]">Us</span>
+        </h1>
+        <a
+          href="https://wa.me/9443394439?text=Hello%20there!"
+          class="mt-2 px-10 py-4 rounded-full bg-white text-[#a259e6] font-bold text-2xl shadow-lg hover:bg-[#a259e6] hover:text-white transition-all duration-200"
+          style="min-width:260px;"
+        >
+          Work With Us
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards Row -->
+    <div class="about-cards relative z-10 max-w-7xl w-full mx-auto mt-16 px-6 md:px-12">
+      <!-- Card 1 -->
+      <div class="about-card">
+        <div>
+          <h3 class="text-white font-bold text-2xl md:text-3xl font-outfit mb-2">Years of Expertise</h3>
+          <p class="text-white font-semibold text-lg md:text-xl font-poppins mb-8 leading-tight">
+            Years of delivering impactful digital marketing solutions
+          </p>
+        </div>
+        <div class="flex items-end justify-end mt-auto gap-2">
+          <span class="text-white font-bold text-6xl md:text-7xl font-outfit" id="count1">0</span>
+          <span class="text-[#4f8cff] text-5xl font-bold mb-2">+</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="about-card">
+        <div>
+          <h3 class="text-white font-bold text-2xl md:text-3xl font-outfit mb-2">Clients Served</h3>
+          <p class="text-white font-semibold text-lg md:text-xl font-poppins mb-8 leading-tight">
+            Partnering With Businesses<br />To Achieve Outstanding Results
+          </p>
+        </div>
+        <div class="flex items-end justify-end mt-auto gap-2">
+          <span class="text-white font-bold text-6xl md:text-7xl font-outfit" id="count2">0</span>
+          <span class="text-[#b18cff] text-5xl font-bold mb-2">+</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="about-card">
+        <div>
+          <h3 class="text-white font-bold text-2xl md:text-3xl font-outfit mb-2">
+            Projects Successfully<br />Completed
+          </h3>
+          <p class="text-white font-semibold text-lg md:text-xl font-poppins mb-8 leading-tight">
+            Delivering Customized Campaigns<br />That Drive Traffic &amp; Boost Conversions.
+          </p>
+        </div>
+        <div class="flex items-end justify-end mt-auto gap-2">
+          <span class="text-white font-bold text-6xl md:text-7xl font-outfit" id="count3">0</span>
+          <span class="text-[#ff7ecb] text-5xl font-bold mb-2">+</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Smooth counting animation triggered on scroll
+      function animateCount(id, end, duration) {
+        const el = document.getElementById(id);
+        let start = 0;
+        const range = end - start;
+        let startTime = null;
+        function animate(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          el.textContent = Math.floor(progress * range + start);
+          if (progress < 1) requestAnimationFrame(animate);
+          else el.textContent = end;
+        }
+        requestAnimationFrame(animate);
+      }
+
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      }
+
+      let animated = false;
+      window.addEventListener("scroll", function () {
+        const aboutSection = document.getElementById("about");
+        if (!animated && isInViewport(aboutSection)) {
+          animateCount("count1", 4, 1200);
+          animateCount("count2", 150, 1800);
+          animateCount("count3", 317, 2000);
+          animated = true;
+        }
+      });
+    </script>
+
+    <style>
+      /* === Step-Style Card Layout === */
+      .about-cards {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* bottoms aligned */
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .about-card {
+        flex: 1;
+        min-width: 320px;
+        max-width: 400px;
+        border-radius: 1rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        padding: 2rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+
+      /* Step heights */
+      .about-card:nth-child(1) { height: 340px; background-image: url('../Icons/Gradients/1.png'); }
+      .about-card:nth-child(2) { height: 400px; background-image: url('../Icons/Gradients/2.png'); }
+      .about-card:nth-child(3) { height: 460px; background-image: url('../Icons/Gradients/3.png'); }
+
+      .about-card:hover { transform: translateY(-10px); }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .about-cards { flex-direction: column; align-items: center; }
+        .about-card { height: auto; width: 100%; max-width: 400px; }
+      }
+    </style>
+  </section>
+</div>
+<section class="relative w-full min-h-[650px] flex items-center justify-center py-24 z-10 overflow-hidden" style="background: #000;">
+  <!-- Motion Background -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <canvas id="smoke-bg" class="w-full h-full"></canvas>
+  </div>
+  <!-- Main Content -->
+  <div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-6xl px-4">
+    <!-- Founder Image -->
+    <div class="rounded-xl overflow-hidden shadow-2xl min-w-[340px] max-w-[340px] min-h-[420px] bg-[#888] flex items-center justify-center">
+      <img src="https://framerusercontent.com/images/u7LTaVmG3VD9UWelLcPQUmkxu4.png?scale-down-to=1024&width=1728&height=1932" alt="Kailash Vicky" class="w-100 h-100 object-cover" />
+    </div>
+    <!-- Founder Text -->
+    <div class="flex-1 flex flex-col items-start justify-center max-w-2xl">
+      <h3 class="font-[Playfair Display] text-white text-4xl md:text-5xl font-medium mb-2" style="font-family:'Playfair Display',serif;">
+        Meet the Founder
+      </h3>
+      <h1 class="font-outfit text-[3.5rem] md:text-[5rem] font-extrabold mb-4" style="color:#fff; letter-spacing:-2px;">
+        Kailash <span style="color:#b18cff;">Vicky</span>
+      </h1>
+      <p class="text-white font-poppins text-lg md:text-2xl font-bold leading-snug mb-2" style="text-shadow:1px 1px 6px #000;text-align: justify;">
+        Over 6 years in media as a prime-time RJ and Social Media Manager. Awarded 'Best Employee' for <br>high-impact campaigns. Built 100K+ organic followers on personal Instagram and grew brand presence to 600K+ across platforms. Skilled in influencer collaborations, digital strategy, and storytelling to turn audiences into loyal communities.
+      </p>
+    </div>
+  </div>
+  <!-- Smoke Animation Script -->
+  </section>
+
+<!-- ======= Footer Section ======= --> 
+<section class="relative w-full min-h-[100vh] flex flex-col items-center justify-start pt-10 pb-0 bg-black overflow-hidden" style="font-family: 'Poppins', Arial, sans-serif;">
+  
+  <!-- Vanta Globe Background -->
+  <div id="vanta-bg" class="absolute inset-0 z-0"></div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    .grow-hero-bg {
+      position: absolute;
+      left: 0; right: 0; top: 0; bottom: 0;
+      z-index: 0;
+      background: #000;
+      overflow: hidden;
+    }
+    .grow-hero-arc {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      width: 180vw;
+      height: 60vw;
+      transform: translateX(-50%);
+      z-index: 1;
+      pointer-events: none;
+      filter: blur(2px);
+    }
+    .grow-hero-arc svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .anton-regular {
+      font-family: "Anton", sans-serif;
+    }
+    .grow-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .grow-hero-customers {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      opacity: 0.95;
+    }
+    .grow-hero-avatars {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+    }
+    .grow-hero-avatars img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -12px;
+      box-shadow: 0 2px 8px #0008;
+      background: #fff;
+      object-fit: cover;
+    }
+    .grow-hero-avatars img:first-child { margin-left: 0; }
+    .grow-hero-title {
+      font-size: 5.5rem;
+      font-weight: 800;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 60%, #bdbdbd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      font-family: 'Poppins', Arial, sans-serif;
+      text-shadow: 0 8px 32px #000a;
+    }
+    .grow-hero-subtitle {
+      font-size: 3rem;
+      font-weight: 700;
+      text-align: center;
+      background: linear-gradient(90deg, #ffb6ff 0%, #b18cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      letter-spacing: -1px;
+      margin-bottom: 2.5rem;
+      font-family: 'Poppins', Arial, sans-serif;
+      text-shadow: 0 4px 24px #b18cff33;
+    }
+    /* Contact Row */
+    .grow-hero-contact-row {
+      display: flex;
+      width: 100%;
+      max-width: 950px;
+      margin: 0 auto;
+      margin-top: 60px;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 2;
+    }
+    .grow-hero-contact-left {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 18px;
+    }
+    .grow-hero-contact-left label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .grow-hero-contact-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+    .grow-hero-contact-left .ig-link {
+      margin-top: 12px;
+      font-size: 1.7rem;
+      color: #fff;
+      opacity: 0.85;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .grow-hero-contact-left .ig-link:hover {
+      color: #b18cff;
+    }
+    /* Contact Form */
+    .grow-hero-contact-form {
+      flex: 2;
+      min-width: 320px;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .grow-hero-contact-form-row {
+      display: flex;
+      gap: 12px;
+      width: 100%;
+    }
+    .grow-hero-contact-form input,
+    .grow-hero-contact-form textarea {
+      width: 100%;
+      background: #18181f;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 1.1rem;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin-bottom: 0;
+      outline: none;
+      transition: box-shadow 0.2s, border 0.2s;
+      box-shadow: 0 2px 8px #0004;
+    }
+    .grow-hero-contact-form input:focus,
+    .grow-hero-contact-form textarea:focus {
+      border: 1.5px solid #b18cff;
+      box-shadow: 0 0 0 2px #b18cff44;
+    }
+    .grow-hero-contact-form label {
+      font-size: 0.98rem;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .grow-hero-contact-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    .grow-hero-contact-form button {
+      background: #444;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      margin-top: 8px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .grow-hero-contact-form button:hover {
+      background: #b18cff;
+      color: #fff;
+    }
+    /* Footer */
+    .grow-hero-footer {
+      width: 100%;
+      max-width: 900px;
+      margin: 60px auto 0 auto;
+      border-top: 1px solid #fff2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-top: 24px;
+      color: #fff;
+      font-size: 1rem;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .grow-hero-footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      min-width: 180px;
+    }
+    .grow-hero-footer-logo img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 4px;
+    }
+    .grow-hero-footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 120px;
+    }
+    .grow-hero-footer-links a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.85;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .grow-hero-footer-links a:hover {
+      color: #b18cff;
+    }
+    .grow-hero-footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 180px;
+      align-items: flex-end;
+      text-align: right;
+    }
+    .grow-hero-footer-contact span,
+    .grow-hero-footer-contact a {
+      color: #fff;
+      font-size: 1rem;
+      opacity: 0.9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .grow-hero-footer-contact a {
+      color: #fff;
+      font-weight: 700;
+      opacity: 1;
+      margin-top: 2px;
+      transition: color 0.2s;
+    }
+    .grow-hero-footer-contact a:hover {
+      color: #b18cff;
+    }
+    @media (max-width: 900px) {
+      .grow-hero-title { font-size: 3.2rem; }
+      .grow-hero-subtitle { font-size: 1.7rem; }
+      .grow-hero-contact-row { flex-direction: column; gap: 32px; }
+      .grow-hero-content { max-width: 98vw; }
+      .grow-hero-footer { flex-direction: column; gap: 18px; align-items: flex-start; }
+      .grow-hero-footer-contact { align-items: flex-start; text-align: left;}
+    }
+    @media (max-width: 600px) {
+      .grow-hero-title { font-size: 2.1rem; }
+      .grow-hero-subtitle { font-size: 1.1rem; }
+      .grow-hero-contact-left h2 { font-size: 1.3rem;}
+      .grow-hero-content { padding: 0 8px;}
+    }
+  </style>
+
+  <div class="grow-hero-bg"></div>
+  <div class="grow-hero-arc">
+    <svg viewBox="0 0 1200 400" fill="none">
+      <defs>
+        <radialGradient id="arcGlow" cx="50%" cy="50%" r="80%" fx="50%" fy="50%">
+          <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="60%" stop-color="#b18cff" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#b18cff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path d="M0 350 Q600 100 1200 350" stroke="url(#arcGlow)" stroke-width="32" fill="none" filter="url(#glow)"/>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="16" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </svg>
+  </div>
+  <div class="grow-hero-content">
+    <div class="grow-hero-customers">
+      <div class="grow-hero-avatars">
+        <img src="https://framerusercontent.com/assets/iO9mxNnQRKLVwitWtMw4bVp9Fw.mp4" alt="Customer 1">
+        <img src="https://media.istockphoto.com/id/536051931/photo/happy-young-businessman-with-digital-tablet-in-warehouse.jpg?s=612x612&w=0&k=20&c=tTVP-NfN4vWWxfU0uub1BLjaWhGJUcyB4YvUvM3zEZw=" alt="Customer 2">
+        <img src="https://media.istockphoto.com/id/1413204314/photo/happy-man-at-supermarket-store.jpg?s=612x612&w=0&k=20&c=Dn5UI46Z6UmBx2n9kYg56jObHBYoQtxcLjS5ukEuXCE=" alt="Customer 3">
+      </div>
+      JOIN 100+ OTHER LOVING CUSTOMERS
+    </div>
+    <div class="grow-hero-title">READY TO GROW</div>
+    <div class="grow-hero-subtitle">YOUR BUSSINESS WITH REACH360</div>
+    <div class="grow-hero-contact-row">
+      <div class="grow-hero-contact-left">
+        <label>Get In Touch</label>
+        <h2>Let’s Bring Your<br>Vision To Life!</h2>
+        <a href="https://instagram.com/" class="ig-link" target="_blank" rel="noopener">
+          <svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="6" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <form class="grow-hero-contact-form">
+        <div class="grow-hero-contact-form-row">
+          <div style="flex:1;">
+            <label for="fname">First Name*</label>
+            <input type="text" id="fname" name="fname" placeholder="Jane Smith" required>
+          </div>
+          <div style="flex:1;">
+            <label for="lname">Last Name*</label>
+            <input type="text" id="lname" name="lname" placeholder="Jane Smith" required>
+          </div>
+        </div>
+        <div class="grow-hero-contact-form-row">
+          <div style="flex:1;">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" placeholder="jane@framer.com" required>
+          </div>
+          <div style="flex:1;">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91">
+          </div>
+        </div>
+        <div>
+          <label for="message">Message*</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="grow-hero-footer">
+      <div class="grow-hero-footer-logo">
+        <img src="../Icons/logo.png" alt="Reach 360 Logo">
+        <span style="font-size:1.1rem;font-weight:700;">REACH 360</span>
+        <span style="font-size:0.92rem;opacity:0.7;">TRANSFORMING BRANDS</span>
+        <span style="font-size:0.85rem;opacity:0.7;">
+          A creative agency driven by passion for transformation—From strategy to storytelling.
+        </span>
+      </div>
+      <div class="grow-hero-footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Pricing</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div class="grow-hero-footer-contact">
+        <span>94433 94439</span>
+        <a href="mailto:reach360d@gmail.com">reach360d@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vanta Globe Scripts -->
+<script src="three.r134.min.js"></script>
+<script src="vanta.globe.min.js"></script>
+<script>
+VANTA.GLOBE({
+  el: "#vanta-bg",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+</script>
+
+</body>
+</html>

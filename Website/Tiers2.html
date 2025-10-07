@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Tariffs</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top right, #0a0a14, #000);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: fadeInBg 1.2s ease-in;
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+section {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  animation: fadeInDown 1.2s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toggle-container {
+  display: inline-flex;
+  background: #111122;
+  border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgba(138, 102, 255, 0.3);
+}
+
+.toggle-container button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-container button.active {
+  background: linear-gradient(90deg, #8a66ff, #6f9bff);
+  color: #fff;
+}
+
+.toggle-container button:hover {
+  color: #fff;
+}
+
+.plans {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+  animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.plan-box {
+  background: linear-gradient(160deg, #0c0c1c, #15152e);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(138, 102, 255, 0.1);
+  padding: 30px 25px;
+  flex: 1 1 300px;
+  transition: all 0.3s ease;
+  max-width: 350px;
+  position: relative;
+}
+
+.plan-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(138, 102, 255, 0.3);
+}
+
+.plan-box h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.plan-box p {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.plan-box button {
+  background: linear-gradient(90deg, #8a66ff, #6f9bff);
+  border: none;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.plan-box button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(138, 102, 255, 0.6);
+}
+
+.plan-box button.special {
+  background: linear-gradient(90deg, #6a52ff, #4e9aff);
+}
+
+.plan-box ul {
+  list-style: none;
+  text-align: left;
+}
+
+.plan-box ul li {
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: #ccc;
+  position: relative;
+  padding-left: 25px;
+}
+
+.plan-box ul li::before {
+  content: "✔";
+  color: #7a50ff;
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+}
+
+.know-more {
+  text-align: center;
+}
+
+.know-more button {
+  background: linear-gradient(90deg, #8a66ff, #6f9bff);
+  border: none;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1.5s ease;
+}
+
+.know-more button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(138, 102, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <h1>Our Tariffs</h1>
+
+  <div class="toggle-container">
+    <button class="active">Annually</button>
+    <button>Monthly</button>
+  </div>
+
+  <div class="plans">
+    <!-- Basic Plan -->
+    <div class="plan-box">
+      <h2>Basic</h2>
+      <p>Perfect for start-ups and individuals</p>
+      <button>Go with this plan →</button>
+      <ul>
+        <li>Organic content creation</li>
+        <li>Basic video shoot & edit</li>
+        <li>Daily social media management</li>
+        <li>E-mail support</li>
+        <li>Regular reels, stories, and posts</li>
+      </ul>
+    </div>
+
+    <!-- Professional Plan -->
+    <div class="plan-box">
+      <h2>Professional</h2>
+      <p>Ideal for growing businesses</p>
+      <button>Go with this plan →</button>
+      <ul>
+        <li>All Tier 1 benefits</li>
+        <li>Pro camera shoots & editing</li>
+        <li>Logo & custom thumbnail design</li>
+        <li>Unique story-driven content</li>
+        <li>AI auto-replies + comment tools</li>
+        <li>Basic lead generation support</li>
+      </ul>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="plan-box">
+      <h2>Enterprises</h2>
+      <p>Comprehensive solutions tailored for large-scale business success.</p>
+      <button class="special">Schedule a call →</button>
+      <ul>
+        <li>All Tier 1 & 2 benefits</li>
+        <li>Cinematic video production</li>
+        <li>Weekly trend-based brand review</li>
+        <li>AI chat automation</li>
+        <li>Full influencer management</li>
+        <li>Personalized lead generation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="know-more">
+    <button>Know More →</button>
+  </div>
+</section>
+
+</body>
+</html>

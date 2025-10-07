@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Tariffs</title>
+  <style>
+    /* Reset */
+    * {margin:0; padding:0; box-sizing:border-box;}
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #0d001a;
+      color: #fff;
+      line-height: 1.6;
+      background-image: linear-gradient(#2a0a40 1px, transparent 1px),
+                        linear-gradient(90deg, #2a0a40 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #d9b3ff;
+    }
+
+    .toggle {
+      display: flex;
+      justify-content: center;
+      margin: 1rem auto 2rem;
+      gap: 1rem;
+    }
+
+    .toggle button {
+      padding: 0.6rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #2a0a40;
+      color: #fff;
+      transition: background 0.3s;
+    }
+
+    .toggle button.active {
+      background: #7a2dff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #2a0a40, #0d001a);
+      border: 1px solid #4b1a6e;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .card h2 {
+      margin-bottom: 0.5rem;
+      color: #d68cff;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #ccc;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    ul li {
+      padding: 0.4rem 0;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    ul li::before {
+      content: "✔";
+      color: #b366ff;
+      margin-right: 0.5rem;
+    }
+
+    .card button {
+      padding: 0.7rem;
+      border: none;
+      border-radius: 6px;
+      background: #7a2dff;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #9d66ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.4);
+      border-top: 1px solid #4b1a6e;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Tariffs</h1>
+    <div class="toggle">
+      <button class="active">Annually</button>
+      <button>Monthly</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="pricing-grid">
+      <!-- Basic Plan -->
+      <div class="card">
+        <h2>Basic</h2>
+        <p>Perfect for start-ups and individuals.</p>
+        <ul>
+          <li>Organic content creation</li>
+          <li>Basic video shoot & edit</li>
+          <li>Basic social media management</li>
+          <li>Email support</li>
+          <li>Regular reels, stories, and posts</li>
+        </ul>
+        <button>Go with this plan ↗</button>
+      </div>
+
+      <!-- Professional Plan -->
+      <div class="card">
+        <h2>Professional</h2>
+        <p>Ideal for growing businesses.</p>
+        <ul>
+          <li>All Tier 1 benefits</li>
+          <li>Professional shoot & editing</li>
+          <li>Logo & custom thumbnail design</li>
+          <li>Unique story-driven content</li>
+          <li>Basic lead-generation tools</li>
+          <li>Basic social media content support</li>
+        </ul>
+        <button>Go with this plan ↗</button>
+      </div>
+
+      <!-- Enterprises Plan -->
+      <div class="card">
+        <h2>Enterprises</h2>
+        <p>Comprehensive solutions tailored for large-scale businesses.</p>
+        <ul>
+          <li>All Tier 1 & 2 benefits</li>
+          <li>Cinematic video production</li>
+          <li>Weekly trend-based brand review</li>
+          <li>AI chat automation</li>
+          <li>Full influencer management</li>
+          <li>Personalized lead generation</li>
+        </ul>
+        <button>Schedule a call ↗</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Company. All rights reserved.</p>
+  </footer>
+</body>
+</html>

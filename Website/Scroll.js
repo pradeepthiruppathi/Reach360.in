@@ -1,0 +1,187 @@
+
+<!-- ======= TARIFF SECTION END ======= -->
+ <section class="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#0f172a] via-[#4c1d95] to-[#0f172a] overflow-hidden">
+  <style>
+    .video-carousel * {margin:0; padding:0; box-sizing:border-box;}
+    .video-carousel {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      perspective: 1500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-carousel .card {
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+    .video-carousel .card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-carousel .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      color: white;
+    }
+    .video-carousel .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 10;
+    }
+    .video-carousel .nav-btn:hover { background: rgba(255,255,255,0.3); }
+    .video-carousel .nav-btn svg { width: 28px; height: 28px; stroke: white; }
+    .video-carousel .nav-btn.left { left: -70px; }
+    .video-carousel .nav-btn.right { right: -70px; }
+    .video-carousel .dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .video-carousel .dots button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .video-carousel .dots button.active {
+      width: 24px;
+      background: white;
+      border-radius: 12px;
+    }
+    @media (max-width: 500px) {
+      .video-carousel { width: 98vw; height: 60vw; min-height: 320px; }
+      .video-carousel .nav-btn.left { left: -40px; }
+      .video-carousel .nav-btn.right { right: -40px; }
+    }
+  </style>
+  <div class="video-carousel">
+    <div class="nav-btn left" id="prevBtn">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </div>
+    <div class="nav-btn right" id="nextBtn">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+  <script>
+    const videos = [
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', title:'Big Buck Bunny'},
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4', title:'Elephants Dream'},
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', title:'For Bigger Blazes'},
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4', title:'For Bigger Escapes'},
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4', title:'For Bigger Fun'},
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4', title:'For Bigger Joyrides'},
+      {url:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4', title:'For Bigger Meltdowns'}
+    ];
+
+    const carousel = document.querySelector('.video-carousel');
+    const dotsContainer = carousel.querySelector('.dots');
+    let currentIndex = 0;
+    let cards = [];
+
+    function renderCards() {
+      // Remove old cards
+      cards.forEach(c => c.remove());
+      cards = [];
+
+      videos.forEach((video, index) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <video src="${video.url}" ${index===currentIndex?'autoplay':''} muted loop playsinline></video>
+          <div class="overlay">
+            <h3>${video.title}</h3>
+            <p>Video ${index+1} of ${videos.length}</p>
+          </div>
+        `;
+        // Positioning
+        const diff = index - currentIndex;
+        if (Math.abs(diff) > 4) {
+          card.style.display = 'none';
+        } else {
+          const offsetX = diff * 30;
+          const offsetZ = -Math.abs(diff) * 80;
+          const scale = 1 - Math.abs(diff)*0.08;
+          const rotateY = diff*5;
+          const opacity = Math.max(0.4, 1 - Math.abs(diff)*0.2);
+          card.style.transform = `translateX(${offsetX}px) translateZ(${offsetZ}px) rotateY(${rotateY}deg) scale(${scale})`;
+          card.style.opacity = opacity;
+          card.style.zIndex = 100 - Math.abs(diff);
+        }
+        carousel.appendChild(card);
+        cards.push(card);
+      });
+
+      // Update dots
+      dotsContainer.innerHTML = '';
+      videos.forEach((_, i) => {
+        const dot = document.createElement('button');
+        if (i===currentIndex) dot.classList.add('active');
+        dot.onclick = () => { currentIndex=i; renderCards(); };
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    carousel.querySelector('#prevBtn').onclick = () => {
+      currentIndex = (currentIndex===0? videos.length-1 : currentIndex-1);
+      renderCards();
+    };
+    carousel.querySelector('#nextBtn').onclick = () => {
+      currentIndex = (currentIndex===videos.length-1? 0 : currentIndex+1);
+      renderCards();
+    };
+
+    // Scroll wheel navigation
+    let isScrolling = false;
+    carousel.addEventListener('wheel', e => {
+      if (isScrolling) return;
+      if (e.deltaY>0) {
+        currentIndex = (currentIndex+1)%videos.length;
+      } else {
+        currentIndex = (currentIndex===0? videos.length-1 : currentIndex-1);
+      }
+      renderCards();
+      isScrolling = true;
+      setTimeout(()=>isScrolling=false,800);
+    }, {passive:true});
+
+    renderCards();
+  </script>
+</section>

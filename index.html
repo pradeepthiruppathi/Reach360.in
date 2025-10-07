@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anima App</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+  content: [],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans_serif: [
+          'sans-serif'
+        ],
+        poppins: [
+          'Poppins',
+          'Poppins Placeholder',
+          'sans-serif'
+        ],
+        plus_jakarta_sans: [
+          'Plus Jakarta Sans',
+          'Plus Jakarta Sans Placeholder',
+          'sans-serif'
+        ],
+        inter_display: [
+          'Inter Display',
+          'Inter Display Placeholder',
+          'sans-serif'
+        ],
+        instrument_serif: [
+          'Instrument Serif',
+          'Instrument Serif Placeholder',
+          'serif'
+        ],
+        satoshi: [
+          'Satoshi',
+          'Satoshi Placeholder',
+          'sans-serif'
+        ],
+        outfit: [
+          'Outfit',
+          'Outfit Placeholder',
+          'sans-serif'
+        ],
+        anton: [
+          'Anton',
+          'Anton Placeholder',
+          'sans-serif'
+        ],
+        affigere: [
+          'Affigere',
+          'sans-serif'
+        ],
+        inter: [
+          'Inter',
+          'Inter Placeholder',
+          'sans-serif'
+        ]
+      }
+    }
+  }
+};
+</script>
+
+  <style>
+    @font-face {
+      font-family: 'Anton';
+      src: url('https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Instrument Serif';
+      src: url('https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url('https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url('https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2') format("woff2");
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url('https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2') format("woff2");
+      font-weight: 800;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2') format("woff2");
+      font-weight: 500;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2') format("woff2");
+      font-weight: 600;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('https://framerusercontent.com/assets/syRNPWzAMIrcJ3wIlPIP43KjQs.woff2') format("woff2");
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('https://framerusercontent.com/assets/yDtI2UI8XcEg1W2je9XPN3Noo.woff2') format("woff2");
+      font-weight: 600;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      /* This font could not be included automatically because of legal reasons. Please add it manually or switch to another font */
+      font-family: 'Inter Display';
+      font-weight: 600;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      /* This font could not be included automatically because of legal reasons. Please add it manually or switch to another font */
+      font-family: 'Satoshi';
+      font-weight: 700;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Outfit';
+      src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/HGVZO4W7MOWSOT5FITRR2LXJL4LPEVKA/JGNFYTACJN27RPO2O5AUTRRZD4FNRJPI/W7JHARPQSG6P4YAUJKIMUM6JNAX2RFW3.woff2') format("woff2");
+      font-weight: 300;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/ZLH2B3SFZRQ3US4ZUYG2367OYUMTVTGK/RSOPFK2EORTGBCOBZRY42GDLXFFB4IQW/JZ35FM4UJSKC7X2PM65RH75Q5KLE552S.woff2') format("woff2");
+      font-weight: 600;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: 'Outfit';
+      src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/RPEPC24XXAVK6EWUOKWQUPTOZQR35AS2/BVWMEQ5ZCLZP2VOXOHXQDCZADXNFBXUF/5REHZLR2B5PQAKMITIQJK6BDK34RDHS4.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      /* This font could not be included automatically because of legal reasons. Please add it manually or switch to another font */
+      font-family: 'Affigere';
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body class="text-black text-xs not-italic normal-nums font-normal accent-auto bg-black box-border caret-transparent block tracking-[normal] leading-[normal] list-outside list-disc text-start indent-[0px] normal-case visible border-separate font-sans_serif"><div class="box-border caret-transparent"><div class="relative bg-black box-border caret-transparent gap-x-0 grid auto-rows-[minmax(0px,1fr)] grid-cols-[repeat(2,minmax(50px,1fr))] grid-rows-[repeat(2,minmax(0px,1fr))] h-[9413px] justify-center min-h-[1000px] gap-y-0 overflow-clip py-[849px]"><div class="box-border caret-transparent contents"><div class="absolute aspect-square box-border caret-transparent shrink-0 left-[-253px] order-2 right-[-427px] z-[1] bottom-[2927px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="calc(100vw + 680px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/41.png" alt="" class="aspect-[auto_740_/_740] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute aspect-[1.7356_/_1] box-border caret-transparent shrink-0 order-7 z-[1] top-0 -inset-x-9"><div class="absolute box-border caret-transparent inset-0"><img sizes="max(100vw / 2, 50px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/45.png" alt="" class="aspect-[auto_1175_/_677] box-border caret-transparent h-full object-cover w-full" />
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[180px] left-[-379px] right-[-359px] top-[-242px] z-[2]"><section class="[mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_25%,rgb(0,0,0)_75%,rgba(0,0,0,0)_100%)] items-center box-border caret-transparent flex h-full justify-items-center list-none max-h-full max-w-full w-full overflow-hidden"><ul class="relative items-center box-border caret-transparent gap-x-[74px] flex h-full justify-items-center max-h-full max-w-full gap-y-[74px] translate-x-[-51.9158px] w-full pl-0 md:transform-none"><li class="box-border caret-transparent text-left"><div class="relative box-border caret-transparent shrink-0 h-[204px] w-[1194px]"><div class="absolute box-border caret-transparent shrink-0 h-[66px] w-[199px] left-[815px] top-[69px]"></div>
+</div>
+</li>
+</ul>
+</section>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[2.3287_/_1] box-border caret-transparent shrink-0 w-[114px] left-[133px] top-[23px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/25.png" alt="" class="aspect-[auto_503_/_216] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[1.03529_/_1] box-border caret-transparent shrink-0 w-[67px] left-[51px] top-3.5"><div class="absolute box-border caret-transparent inset-0"><img sizes="66.9565px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/48.png" alt="" class="aspect-[auto_851_/_817] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap top-[-7px] left-96"><p class="text-white text-[41px] font-medium box-border caret-transparent leading-[103.988px] text-nowrap font-poppins">=</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap top-[-17px] left-96"><p class="text-white text-[41px] font-medium box-border caret-transparent leading-[103.988px] text-nowrap font-poppins">=</p>
+</div>
+</div>
+<div class="absolute aspect-[1.77778_/_1] box-border caret-transparent shrink-0 left-[-38px] opacity-[0.76] order-8 right-[-58px] z-[1] top-[1052px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/28.png" alt="" class="aspect-[auto_480_/_270] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute aspect-[1.74941_/_1] box-border caret-transparent shrink-0 opacity-[0.11] order-9 right-[-3561px] w-[1835px] z-[1] top-[1411px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="max(100vw / 2, 50px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/38.png" alt="" class="aspect-[auto_740_/_423] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute aspect-[1.77778_/_1] box-border caret-transparent shrink-0 left-[-920px] order-10 right-[-401px] z-[1] bottom-[1935px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="max(100vw / 2, 50px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/35.png" alt="" class="aspect-[auto_1280_/_443] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start order-11 text-nowrap translate-x-[-50.0%] z-[1] left-2/4 top-[771px]"><p class="text-white text-[21px] font-medium box-border caret-transparent leading-[25.2px] text-nowrap font-poppins">Trusted By</p>
+</div>
+<div class="absolute bg-fuchsia-950 box-border caret-transparent blur-[147px] shrink-0 h-[419px] left-[-259px] order-12 w-[419px] z-[1] rounded-[77%] top-[1034px]"></div>
+<div class="absolute bg-blue-800 box-border caret-transparent blur-[147px] shrink-0 h-[419px] order-[13] right-[-327px] w-[419px] z-[1] rounded-[77%] top-[1228px]"></div>
+<div class="absolute aspect-[1.74941_/_1] box-border caret-transparent shrink-0 opacity-[0.11] order-[14] right-[-2777px] w-[1835px] z-[1] bottom-[1567px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="max(100vw / 2, 50px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/38.png" alt="" class="aspect-[auto_740_/_423] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute aspect-[1.77778_/_1] box-border caret-transparent shrink-0 left-[-367px] opacity-[0.76] order-[15] right-[-954px] z-[1] bottom-[2524px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="calc(100vw + 1321px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/6.webp" alt="" class="aspect-[auto_1280_/_549] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[146px] left-[-521px] order-[27] right-[-522px] z-[1] overflow-clip top-[940px]"><div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words translate-x-[-50.0%] w-[355px] z-[1] left-2/4 bottom-[15px]"><p class="text-white text-[13px] font-semibold box-border caret-transparent leading-[17.3063px] break-words text-justify capitalize font-poppins">We specialize in crafting bold, memorable designs and strategies that bring brands to life.  From </p>
+<p class="text-white text-[13px] font-semibold box-border caret-transparent leading-[17.3063px] break-words text-justify capitalize font-poppins">Self branding  to content creation and SEO, marketing campaigns.</p>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words translate-x-[-50.0%] w-[277px] z-[1] left-[48%] top-0.5"><p class="text-white text-[35px] font-extrabold box-border caret-transparent leading-[58.0152px] break-words capitalize font-plus_jakarta_sans">Our Services</p>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[434px] left-[calc(50.2452%_-_825.66px)] order-[22] w-[1651px] z-[1] overflow-clip bottom-[1591px]"></div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[1.02041_/_1] box-border caret-transparent shrink-0 order-[26] w-[333px] z-[1] left-[58px] top-[102px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="333px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/47.png" alt="" class="aspect-[auto_1000_/_980] box-border caret-transparent h-full object-cover w-full" />
+</div>
+<div class="absolute aspect-square box-border caret-transparent gap-x-2.5 shrink-0 gap-y-2.5 w-[65px] left-[248px] top-[23px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/37.png" alt="" class="aspect-[auto_400_/_400] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute aspect-[1.15426_/_1] box-border caret-transparent shrink-0 w-[106px] -left-6 bottom-12"><div class="absolute box-border caret-transparent inset-0"><img sizes="106.24px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/32.png" alt="" class="aspect-[auto_572_/_496] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent shrink-0 h-[71px] order-6 w-[264px] z-[1] left-[13px] top-[664px]"><a href="https://wa.me/9443394439" class="relative text-blue-700 content-center items-center box-border caret-transparent gap-x-0 flex h-full justify-center gap-y-0 w-full"><div class="relative content-center items-center bg-white box-border caret-transparent gap-x-[11.06px] flex shrink-0 h-min justify-center gap-y-[11.06px] w-min overflow-hidden px-[28.77px] py-[15.49px] rounded-[43.15px]"><div class="absolute aspect-square bg-blue-600 bottom-[-9px] box-border caret-transparent shrink-0 translate-x-[-50.0%] w-[9px] z-[1] rounded-[110.64px] left-2/4"></div>
+<div class="relative content-center items-center box-border caret-transparent gap-x-0 flex flex-col shrink-0 h-[21px] justify-start gap-y-0 w-min overflow-hidden px-[4.43px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-black text-lg font-semibold box-border caret-transparent tracking-[-0.36px] leading-[21.6px] text-nowrap font-inter_display">Book A Free Call</p>
+</div>
+</div>
+<div name="Icon Static" class="absolute box-border caret-transparent shrink-0 h-[21px] right-[-25px] w-6 z-[1] bottom-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-1.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[102px] left-[-180px] order-5 right-[-49px] z-[2] top-[802px]"><section class="[mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgb(0,0,0)_25%,rgb(0,0,0)_75%,rgba(0,0,0,0)_100%)] items-center box-border caret-transparent flex h-full justify-items-center list-none max-h-full max-w-full w-full overflow-hidden"><ul class="relative items-center box-border caret-transparent gap-x-[74px] flex h-full justify-items-center max-h-full max-w-full gap-y-[74px] translate-x-[-92.7468px] w-full pl-0 md:translate-x-[-324.897px]"><li class="box-border caret-transparent text-left"><div class="relative box-border caret-transparent shrink-0 h-[204px] w-[1194px]"><div class="absolute box-border caret-transparent shrink-0 h-[134px] opacity-[0.525984] w-[276px] left-[220px] top-[35px] md:opacity-0"><div class="absolute aspect-[1.77305_/_1] box-border caret-transparent shrink-0 w-[159px] left-0 top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="159.14px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/26.png" alt="" class="aspect-[auto_832_/_472] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+<div class="absolute aspect-[2.2973_/_1] box-border caret-transparent shrink-0 opacity-[0.270191] w-[216px] left-[59px] top-[39px] md:opacity-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="216.43px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/29.png" alt="" class="aspect-[auto_1132_/_492] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="absolute aspect-square box-border caret-transparent shrink-0 opacity-[0.108913] w-[169px] left-[511px] top-[18px] md:opacity-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="168.69px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/40.png" alt="" class="aspect-[auto_1080_/_1080] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[66px] w-[199px] left-[815px] top-[69px]"></div>
+<div class="absolute aspect-[2.25478_/_1] box-border caret-transparent shrink-0 opacity-0 w-[166px] left-[1029px] top-[65px] md:opacity-[0.324475]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/14.webp" alt="" class="aspect-[auto_354_/_157] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+</li>
+<li class="box-border caret-transparent text-left"><div class="relative box-border caret-transparent shrink-0 h-[204px] w-[1194px]"><div class="absolute aspect-square box-border caret-transparent shrink-0 opacity-0 w-[204px] left-0 top-0 md:opacity-[0.898052]"><div class="absolute box-border caret-transparent inset-0"><img sizes="204.33px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/39.png" alt="" class="aspect-[auto_1080_/_1080] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[134px] opacity-0 w-[276px] left-[220px] top-[35px] md:opacity-[0.99731]"><div class="absolute aspect-[1.77305_/_1] box-border caret-transparent shrink-0 w-[159px] left-0 top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="159.14px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/26.png" alt="" class="aspect-[auto_832_/_472] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+<div class="absolute aspect-[2.2973_/_1] box-border caret-transparent shrink-0 opacity-0 w-[216px] left-[59px] top-[39px] md:opacity-100"><div class="absolute box-border caret-transparent inset-0"><img sizes="216.43px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/29.png" alt="" class="aspect-[auto_1132_/_492] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="absolute aspect-square box-border caret-transparent shrink-0 opacity-0 w-[169px] left-[511px] top-[18px] md:opacity-[0.112505]"><div class="absolute box-border caret-transparent inset-0"><img sizes="168.69px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/40.png" alt="" class="aspect-[auto_1080_/_1080] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[66px] w-[199px] left-[815px] top-[69px]"></div>
+</div>
+</li>
+<li class="box-border caret-transparent text-left"><div class="relative box-border caret-transparent shrink-0 h-[204px] w-[1194px]"><div class="absolute box-border caret-transparent shrink-0 h-[66px] w-[199px] left-[815px] top-[69px]"></div>
+</div>
+</li>
+<li class="box-content caret-black min-h-0 min-w-0 text-left md:aspect-auto md:box-border md:caret-transparent md:min-h-[auto] md:min-w-[auto] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"><div class="static box-content caret-black shrink h-auto w-auto md:relative md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-[204px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[1194px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]"><div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-square md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[204px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-0 md:top-0"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="204.33px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/39.png" alt="" class="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_1080_/_1080] md:box-border md:caret-transparent md:h-full md:object-cover md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+<div class="static box-content caret-black shrink h-auto opacity-100 w-auto left-auto top-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-[134px] md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[276px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[220px] md:top-[35px]"><div class="static box-content caret-black shrink w-auto left-auto top-auto md:absolute md:aspect-[1.77305_/_1] md:box-border md:caret-transparent md:shrink-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[159px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-0 md:top-0"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="159.14px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/26.png" alt="" class="box-content caret-black h-auto align-middle w-auto md:aspect-[auto_832_/_472] md:box-border md:caret-transparent md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+<div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-[2.2973_/_1] md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[216px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[59px] md:top-[39px]"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="216.43px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/29.png" alt="" class="box-content caret-black h-auto align-middle w-auto md:aspect-[auto_1132_/_492] md:box-border md:caret-transparent md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+</div>
+<div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-square md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[169px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[511px] md:top-[18px]"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="168.69px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/40.png" alt="" class="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_1080_/_1080] md:box-border md:caret-transparent md:h-full md:object-cover md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+<div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-square md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[105px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[695px] md:top-[50px]"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="105.03px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/42.png" alt="" class="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_1280_/_1280] md:box-border md:caret-transparent md:h-full md:object-cover md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+<div class="static box-content caret-black shrink h-auto w-auto left-auto top-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:shrink-0 md:h-[66px] md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[199px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[815px] md:top-[69px]"><div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-[2.98_/_1] md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[190px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-0 md:top-0"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="189.69px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/27.png" alt="" class="box-content caret-black h-auto align-middle w-auto md:aspect-[auto_992_/_336] md:box-border md:caret-transparent md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+<div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-[1.98925_/_1] md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[118px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[81px] md:top-1.5"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img sizes="117.76px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/23.png" alt="" class="box-content caret-black h-auto align-middle w-auto md:aspect-[auto_616_/_312] md:box-border md:caret-transparent md:h-full md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+</div>
+<div class="static box-content caret-black shrink opacity-100 w-auto left-auto top-auto md:absolute md:aspect-[2.25478_/_1] md:box-border md:caret-transparent md:shrink-0 md:opacity-0 md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:w-[166px] md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:left-[1029px] md:top-[65px]"><div class="static box-content caret-black inset-auto md:absolute md:aspect-auto md:box-border md:caret-transparent md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto] md:inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/14.webp" alt="" class="box-content caret-black h-auto object-fill align-middle w-auto md:aspect-[auto_354_/_157] md:box-border md:caret-transparent md:h-full md:object-cover md:overscroll-x-auto md:overscroll-y-auto md:snap-align-none md:snap-normal md:snap-none md:decoration-auto md:underline-offset-auto md:align-baseline md:w-full md:[mask-position:0%] md:bg-left-top md:scroll-m-0 md:scroll-p-[auto]" />
+</div>
+</div>
+</div>
+</li>
+</ul>
+</section>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[1891px] left-[calc(48.718%_-_155px)] order-[28] w-[310px] z-[1] overflow-clip top-[1082px]"><div class="absolute box-border caret-transparent shrink-0 h-[358px] w-[304px] left-0 top-0"><div class="box-border caret-transparent contents"><div class="absolute backdrop-blur-[23px] shadow-[rgb(242,242,242)_0px_0px_89.7709px_0px_inset,rgba(255,255,255,0.5)_0px_0px_16.832px_0px_inset,rgb(38,38,38)_-3.87px_-3.87px_0px_-1.94px_inset,rgb(51,51,51)_3.87px_3.87px_0px_-1.94px_inset,rgba(0,0,0,0.12)_0px_3.87px_44.8854px_0px,rgba(0,0,0,0.1)_0px_0px_11.2214px_0px] box-border caret-transparent gap-x-[44.8854px] shrink-0 h-[314px] gap-y-[44.8854px] w-[304px] overflow-hidden rounded-[9px] left-0 top-11"><div class="absolute box-border caret-transparent rounded-[9px] inset-0"><img sizes="303.64px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/30.jpg" alt="" class="aspect-[auto_1280_/_720] box-border caret-transparent h-full w-full rounded-[9px]" />
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[230px] w-[293px] left-[11px] top-[69px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words translate-x-[-50.0%] w-[284px] left-2/4 top-0"><p class="text-white text-2xl box-border caret-transparent leading-[100.656px] break-words capitalize font-instrument_serif">Personal Branding</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words translate-x-[-50.0%] w-[277px] left-[48%] bottom-5"><p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">We help you show your true self with confidence.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Your story deserves to be seen and valued.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">We guide you to create a lasting impression.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Stand out for who you really are, not just what you do.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">We make it easier for people to remember and trust you.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.718447_/_1] box-border caret-transparent shrink-0 w-[102px] left-[30px] top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="102.13px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/52.png" alt="" class="aspect-[auto_592_/_824] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[363px] w-[307px] left-0 top-[358px]"><div class="box-border caret-transparent contents"><div class="absolute backdrop-blur-[23px] shadow-[rgb(242,242,242)_0px_0px_89.7709px_0px_inset,rgba(255,255,255,0.5)_0px_0px_16.832px_0px_inset,rgb(38,38,38)_-3.87px_-3.87px_0px_-1.94px_inset,rgb(51,51,51)_3.87px_3.87px_0px_-1.94px_inset,rgba(0,0,0,0.12)_0px_3.87px_44.8854px_0px,rgba(0,0,0,0.1)_0px_0px_11.2214px_0px] box-border caret-transparent gap-x-[44.8854px] shrink-0 h-[314px] gap-y-[44.8854px] w-[304px] overflow-hidden rounded-[9px] left-0 top-11"><div class="absolute box-border caret-transparent rounded-[9px] inset-0"><img sizes="303.64px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/30.jpg" alt="" class="aspect-[auto_1280_/_720] box-border caret-transparent h-full w-full rounded-[9px]" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.718447_/_1] box-border caret-transparent shrink-0 w-[102px] left-[33px] top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="102.13px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/50.png" alt="" class="aspect-[auto_592_/_824] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[250px] w-[293px] left-3.5 top-[113px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[284px] left-0 top-0"><p class="text-white text-2xl box-border caret-transparent leading-[100.656px] break-words capitalize font-instrument_serif">Influencer Marketing</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[277px] left-0 top-[76px]"><p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">We have a strong network of trusted influencers in many niches.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Our team quickly connects your brand with the right influencers.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Influencers act as real brand supporters, building trust and reach.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">We create review videos and collaborations that attract the right audience.</p>
+<p class="text-white text-[15.81px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins"><br class="box-border caret-transparent break-words" />
+</p>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[358px] top-[calc(47.6027%_-_179.07px)] w-[307px] left-0"><div class="box-border caret-transparent contents"><div class="absolute backdrop-blur-[23px] shadow-[rgb(242,242,242)_0px_0px_89.7709px_0px_inset,rgba(255,255,255,0.5)_0px_0px_16.832px_0px_inset,rgb(38,38,38)_-3.87px_-3.87px_0px_-1.94px_inset,rgb(51,51,51)_3.87px_3.87px_0px_-1.94px_inset,rgba(0,0,0,0.12)_0px_3.87px_44.8854px_0px,rgba(0,0,0,0.1)_0px_0px_11.2214px_0px] box-border caret-transparent gap-x-[44.8854px] shrink-0 h-[314px] gap-y-[44.8854px] w-[304px] overflow-hidden rounded-[9px] left-0 top-11"><div class="absolute box-border caret-transparent rounded-[9px] inset-0"><img sizes="303.64px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/30.jpg" alt="" class="aspect-[auto_1280_/_720] box-border caret-transparent h-full w-full rounded-[9px]" />
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words translate-x-[-50.0%] w-[284px] left-2/4 top-[69px]"><p class="text-white text-2xl box-border caret-transparent leading-[100.656px] break-words capitalize font-instrument_serif">Social media Management</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words translate-x-[-50.0%] w-[263px] left-[47%] bottom-[29px]"><p class="text-white text-[11px] box-border caret-transparent leading-[20.0126px] break-words text-justify capitalize font-poppins">Content creation from strategy to visuals</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[20.0126px] break-words text-justify capitalize font-poppins">Social media management (reels, stories, daily posts)</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[20.0126px] break-words text-justify capitalize font-poppins">Scriptwriting &amp; creative ideation</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[20.0126px] break-words text-justify capitalize font-poppins">Audience engagement (responding, interacting, growing organically)</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[20.0126px] break-words text-justify capitalize font-poppins">Video production (shooting &amp; editing)</p>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.961165_/_1] box-border caret-transparent shrink-0 w-[137px] left-[17px] top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="136.63px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/49.png" alt="" class="aspect-[auto_792_/_824] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[344px] w-[307px] left-0 bottom-[87px]"><div class="box-border caret-transparent contents"><div class="absolute backdrop-blur-[23px] shadow-[rgb(242,242,242)_0px_0px_89.7709px_0px_inset,rgba(255,255,255,0.5)_0px_0px_16.832px_0px_inset,rgb(38,38,38)_-3.87px_-3.87px_0px_-1.94px_inset,rgb(51,51,51)_3.87px_3.87px_0px_-1.94px_inset,rgba(0,0,0,0.12)_0px_3.87px_44.8854px_0px,rgba(0,0,0,0.1)_0px_0px_11.2214px_0px] box-border caret-transparent gap-x-[44.8854px] shrink-0 h-[314px] gap-y-[44.8854px] top-[calc(54.1177%_-_157.025px)] overflow-hidden rounded-[9px] left-0 -right-3"><div class="absolute box-border caret-transparent rounded-[9px] inset-0"><img sizes="318.97px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/30.jpg" alt="" class="aspect-[auto_1280_/_720] box-border caret-transparent h-full w-full rounded-[9px]" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.718778_/_1] box-border caret-transparent shrink-0 w-[88px] left-10 top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="88.28px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/53.png" alt="" class="aspect-[auto_800_/_1113] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[211px] w-[293px] left-3.5 top-[99px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[284px] left-0 top-0"><p class="text-white text-2xl box-border caret-transparent leading-[100.656px] break-words capitalize font-instrument_serif">Lead Generation</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[286px] left-0 top-[83px]"><p class="text-white text-[11px] box-border caret-transparent leading-[21.3927px] break-words text-justify capitalize font-poppins">We design and develop responsive, visually appealing websites that reflect your brand.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[21.3927px] break-words text-justify capitalize font-poppins">We create targeted campaigns using landing pages, ads, and automation tools.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[21.3927px] break-words text-justify capitalize font-poppins">Our goal is to attract, capture, and convert high-quality leads for your business.</p>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[358px] w-[307px] left-0 bottom-[454px]"><div class="box-border caret-transparent contents"><div class="absolute backdrop-blur-[23px] shadow-[rgb(242,242,242)_0px_0px_89.7709px_0px_inset,rgba(255,255,255,0.5)_0px_0px_16.832px_0px_inset,rgb(38,38,38)_-3.87px_-3.87px_0px_-1.94px_inset,rgb(51,51,51)_3.87px_3.87px_0px_-1.94px_inset,rgba(0,0,0,0.12)_0px_3.87px_44.8854px_0px,rgba(0,0,0,0.1)_0px_0px_11.2214px_0px] box-border caret-transparent gap-x-[44.8854px] shrink-0 h-[314px] gap-y-[44.8854px] w-[304px] overflow-hidden rounded-[9px] left-0 top-11"><div class="absolute box-border caret-transparent rounded-[9px] inset-0"><img sizes="303.64px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/30.jpg" alt="" class="aspect-[auto_1280_/_720] box-border caret-transparent h-full w-full rounded-[9px]" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.718447_/_1] box-border caret-transparent shrink-0 w-[102px] left-[33px] top-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="102.13px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/51.png" alt="" class="aspect-[auto_592_/_824] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[213px] w-[293px] left-3.5 top-28"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[284px] left-0 top-0"><p class="text-white text-2xl box-border caret-transparent leading-[100.656px] break-words capitalize font-instrument_serif">Search Engine Optimization</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[286px] left-0 top-[77px]"><p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Boost your visibility, rank higher, grow faster.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Smart SEO that drives real business results.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">From keywords to conversions — we optimize it all.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">Climb search rankings, stay ahead of competitors.</p>
+<p class="text-white text-[11px] box-border caret-transparent leading-[19.3225px] break-words text-justify capitalize font-poppins">More traffic. More leads. More growth.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[1028px] opacity-[0.88] order-[29] right-[-76px] w-[195px] z-[1] overflow-clip top-[942px]"></div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-square box-border caret-transparent shrink-0 left-[-70px] order-3 right-[-357px] z-[1] bottom-[3688px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="calc(100vw + 427px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/41.png" alt="" class="aspect-[auto_740_/_740] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[285px] left-[calc(53.3333%_-_133.5px)] order-[30] w-[267px] overflow-clip bottom-[3976px]"></div>
+<div class="absolute box-border caret-transparent shrink-0 h-[341px] left-[calc(46.6667%_-_155.5px)] order-[31] w-[311px] z-[1] overflow-clip bottom-[3446px]"><div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent shrink-0 inset-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="311px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/54.png" alt="" class="aspect-[auto_1716_/_1888] box-border caret-transparent h-full object-contain w-full" />
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[81px] w-[157px] left-[155px] bottom-4"><div class="text-gray-200 text-[64px] font-bold items-center box-border caret-transparent gap-x-1 flex justify-center gap-y-1 font-satoshi"><span class="text-green-500 box-border caret-transparent block"></span>
+<span class="box-border caret-transparent block">6</span>
+<span class="text-sky-500 box-border caret-transparent block">+</span>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[13px] top-[22px]"><p class="text-white text-[21px] font-semibold box-border caret-transparent leading-[27.4342px] capitalize text-nowrap font-poppins">Clients Served</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[13px] top-[59px]"><p class="text-white text-sm font-semibold box-border caret-transparent leading-[20.8906px] capitalize text-nowrap font-poppins">Partnering with Businesses</p>
+<p class="text-white text-sm font-semibold box-border caret-transparent leading-[20.8906px] capitalize text-nowrap font-poppins">to Achieve outstanding Results </p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[432px] left-[calc(47.4359%_-_160px)] order-[32] w-80 z-[1] overflow-clip bottom-[2981px]"><div class="absolute box-border caret-transparent shrink-0 inset-0"><div class="absolute bg-slate-900 box-border caret-transparent gap-x-0 shrink-0 h-[433px] left-[calc(50%_-_159.96px)] gap-y-0 top-[calc(50%_-_216.545px)] scale-x-[-1px] scale-y-[-1px] w-80 overflow-hidden rounded-[7px]"><div class="absolute bg-fuchsia-700 box-border caret-transparent blur-[113px] shrink-0 h-[877px] left-[-73px] w-[1192px] rounded-[75%] top-[18px]"></div>
+<div class="absolute bg-pink-800 box-border caret-transparent blur-[113px] shrink-0 h-[654px] w-[573px] rounded-[75%] left-[121px] top-[149px]"></div>
+<div class="absolute bg-yellow-500/60 box-border caret-transparent blur-[113px] shrink-0 h-[442px] w-[442px] rounded-[75%] left-[95px] top-[290px]"></div>
+<div class="absolute bg-red-200 box-border caret-transparent blur-[113px] shrink-0 h-[222px] w-[222px] rounded-[75%] left-[163px] top-[392px]"></div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.747604_/_1] bottom-[-65px] box-border caret-transparent shrink-0 mix-blend-color-dodge opacity-10 right-[-9px] scale-x-[-1px] scale-y-[-1px] -left-6"><div class="absolute box-border caret-transparent inset-0"><img sizes="352.92px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/36.jpg" alt="" class="aspect-[auto_1200_/_1604] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[85px] scale-x-[-1px] scale-y-[-1px] w-[156px] left-[13px] top-4"><div class="text-gray-200 text-[64px] font-bold items-center box-border caret-transparent gap-x-1 flex justify-center gap-y-1 font-satoshi"><span class="text-green-500 box-border caret-transparent block"></span>
+<span class="box-border caret-transparent block">6</span>
+<span class="text-sky-500 box-border caret-transparent block">+</span>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-5 top-3.5"><p class="text-white text-[22px] font-semibold box-border caret-transparent leading-[28.5961px] capitalize text-nowrap font-poppins">Projects Successfully</p>
+<p class="text-white text-[22px] font-semibold box-border caret-transparent leading-[28.5961px] capitalize text-nowrap font-poppins">Completed</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-5 top-[82px]"><p class="text-white text-[15px] font-semibold box-border caret-transparent leading-[21.7753px] capitalize text-nowrap font-poppins">Delivering Customized Campaigns</p>
+<p class="text-white text-[15px] font-semibold box-border caret-transparent leading-[21.7753px] capitalize text-nowrap font-poppins">That Drive traffic &amp; boost Conversions.</p>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[1.10801_/_1] box-border caret-transparent shrink-0 order-[33] right-[-2613px] w-[1494px] z-[1] bottom-[2161px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="1494px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/1.webp" alt="" class="aspect-[auto_2616_/_2361] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[1.10801_/_1] bottom-[-611px] box-border caret-transparent shrink-0 left-[-330px] right-[-715px] scale-x-[-1px] scale-y-[-1px] z-[1]"><div class="absolute box-border caret-transparent inset-0"><img sizes="calc(100vw + 1045px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/1.webp" alt="" class="aspect-[auto_2616_/_2361] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[1.10801_/_1] box-border caret-transparent shrink-0 left-[-631px] order-[34] right-[-1056px] z-[1] bottom-[739px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="calc(100vw + 1687px)" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/1.webp" alt="" class="aspect-[auto_2616_/_2361] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="absolute content-center items-center bg-[linear-gradient(149deg,rgba(81,47,235,0.15)_0%,rgba(255,255,255,0.06)_29%,rgba(255,255,255,0.06)_74%,rgba(81,47,235,0.15)_100%)] box-border caret-transparent gap-x-[35px] flex flex-col shrink-0 h-min justify-center order-[35] gap-y-[35px] translate-x-[-50.0%] w-[354px] z-[1] overflow-hidden p-[30px] rounded-[30px] left-2/4 top-[3629px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[30px] after:border-separate after:border-solid after:border-white/10 after:left-0 after:top-0 after:font-sans_serif"><div class="relative content-start items-start box-border caret-transparent gap-x-[15px] flex flex-col shrink-0 h-min justify-center gap-y-[15px] w-full overflow-hidden"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-start gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-2.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] text-left text-nowrap font-outfit">Basic</p>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full"><p class="text-white/70 text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Perfect for start-ups and individuals</p>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><a href="https://www.framer.com/?via=kanishkdubey" class="relative text-blue-700 content-center items-center bg-indigo-600 shadow-[rgba(0,0,0,0.15)_0px_0.706592px_0.706592px_-0.625px,rgba(0,0,0,0.145)_0px_1.80656px_1.80656px_-1.25px,rgba(0,0,0,0.137)_0px_3.62176px_3.62176px_-1.875px,rgba(0,0,0,0.125)_0px_6.8656px_6.8656px_-2.5px,rgba(0,0,0,0.106)_0px_13.6468px_13.6468px_-3.125px,rgba(0,0,0,0.05)_0px_30px_30px_-3.75px] box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full px-[15px] py-2.5 rounded-lg after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-lg after:border-separate after:border-solid after:border-white/10 after:left-0 after:top-0 after:font-sans_serif"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-[18px] justify-start gap-y-2.5 w-min overflow-hidden"><div class="relative content-end items-end self-stretch box-border caret-transparent gap-x-[5px] flex shrink-0 h-min justify-center gap-y-[5px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-[15px] box-border caret-transparent leading-[18px] text-center text-nowrap font-outfit">Go with this plan</p>
+</div>
+<div class="relative box-border caret-transparent shrink-0 h-4 w-4"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-3.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative content-end items-end self-stretch box-border caret-transparent gap-x-[5px] flex shrink-0 h-min justify-center gap-y-[5px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-[15px] box-border caret-transparent leading-[18px] text-center text-nowrap font-outfit">Go with this plan</p>
+</div>
+<div class="relative box-border caret-transparent shrink-0 h-4 w-4"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-4.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Organic content creation</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Basic video shoot &amp; edit</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Daily social media management</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">E-mail support</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Regular reels, stories, and posts</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[595px] left-[calc(50.2564%_-_158.5px)] order-[36] w-[317px] z-[1] overflow-clip top-[2931px]"><div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent shrink-0 h-[185px] w-[310px] rounded-[9px] left-0.5 top-0"><div class="absolute box-border caret-transparent rounded-[9px] inset-0"><img sizes="310px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/44.png" alt="" class="aspect-[auto_820_/_460] box-border caret-transparent h-full object-cover w-full rounded-[9px]" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words top-[198px] inset-x-0"><p class="text-white text-[23px] font-semibold box-border caret-transparent leading-[30.4597px] break-words font-poppins">Why Your Business Need </p>
+<p class="text-white text-[23px] font-semibold box-border caret-transparent leading-[30.4597px] break-words font-poppins">Digital Marketing Services?</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[318px] left-0 bottom-0"><p class="text-white text-sm font-semibold box-border caret-transparent tracking-[0.14px] leading-[19px] break-words text-justify font-poppins">In today’s digital-first world, having a strong online presence is no longer optional—it’s essential for business growth and success. With the right digital marketing strategies, you can effectively connect with your audience, build trust, and stay ahead in a highly competitive market.</p>
+<p class="text-white text-[15.92px] font-semibold box-border caret-transparent leading-[19px] break-words text-justify font-poppins"><br class="box-border caret-transparent break-words" />
+</p>
+<p class="text-white text-sm font-semibold box-border caret-transparent tracking-[0.14px] leading-[19px] break-words text-justify font-poppins">At <span class="text-purple-500 box-border caret-transparent break-words">Reach360</span>
+, a leading digital marketing agency in Trichy, we specialize in delivering tailored solutions that bring measurable results. From boosting your online reach to driving meaningful customer engagement, we help your brand grow stronger in the digital landscape.</p>
+<p class="text-white text-sm font-semibold box-border caret-transparent tracking-[0.14px] leading-[19px] break-words text-justify font-poppins">Take the first step toward transforming your business with Reach360 today</p>
+</div>
+</div>
+<div class="absolute content-center items-center bg-[linear-gradient(149deg,rgba(81,47,235,0.15)_0%,rgba(255,255,255,0.06)_29%,rgba(255,255,255,0.06)_74%,rgba(81,47,235,0.15)_100%)] box-border caret-transparent gap-x-[35px] flex flex-col shrink-0 h-min justify-center order-[37] gap-y-[35px] translate-x-[-50.0%] translate-y-[-50.0%] w-[343px] z-[1] overflow-hidden p-[30px] rounded-[30px] left-[51%] top-[45%] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[30px] after:border-separate after:border-solid after:border-white/10 after:left-0 after:top-0 after:font-sans_serif"><div class="relative content-start items-start box-border caret-transparent gap-x-[15px] flex flex-col shrink-0 h-min justify-center gap-y-[15px] w-full overflow-hidden"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-start gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-6.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] text-left text-nowrap font-outfit">Professional</p>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full"><p class="text-white/70 text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Ideal for growing businesses</p>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><a href="https://www.framer.com/?via=kanishkdubey" class="relative text-blue-700 content-center items-center bg-indigo-600 shadow-[rgba(0,0,0,0.15)_0px_0.706592px_0.706592px_-0.625px,rgba(0,0,0,0.145)_0px_1.80656px_1.80656px_-1.25px,rgba(0,0,0,0.137)_0px_3.62176px_3.62176px_-1.875px,rgba(0,0,0,0.125)_0px_6.8656px_6.8656px_-2.5px,rgba(0,0,0,0.106)_0px_13.6468px_13.6468px_-3.125px,rgba(0,0,0,0.05)_0px_30px_30px_-3.75px] box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full px-[15px] py-2.5 rounded-lg after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-lg after:border-separate after:border-solid after:border-white/10 after:left-0 after:top-0 after:font-sans_serif"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-[18px] justify-start gap-y-2.5 w-min overflow-hidden"><div class="relative content-end items-end self-stretch box-border caret-transparent gap-x-[5px] flex shrink-0 h-min justify-center gap-y-[5px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-[15px] box-border caret-transparent leading-[18px] text-center text-nowrap font-outfit">Go with this plan</p>
+</div>
+<div class="relative box-border caret-transparent shrink-0 h-4 w-4"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-3.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative content-end items-end self-stretch box-border caret-transparent gap-x-[5px] flex shrink-0 h-min justify-center gap-y-[5px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-[15px] box-border caret-transparent leading-[18px] text-center text-nowrap font-outfit">Go with this plan</p>
+</div>
+<div class="relative box-border caret-transparent shrink-0 h-4 w-4"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-4.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">All Tier 1 benefits</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Pro camera shoots &amp; editing</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Logo &amp; custom thumbnail design</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Unique story-driven content</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">AI auto-replies + comment tools</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Basic lead generation support</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute content-center items-center bg-[linear-gradient(149deg,rgba(81,47,235,0.15)_0%,rgba(255,255,255,0.06)_29%,rgba(255,255,255,0.06)_74%,rgba(81,47,235,0.15)_100%)] box-border caret-transparent gap-x-[35px] flex flex-col shrink-0 h-min justify-center order-[38] gap-y-[35px] translate-x-[-50.0%] translate-y-[-50.0%] w-[330px] z-[1] overflow-hidden p-[30px] rounded-[30px] left-[51%] top-2/4 after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-[30px] after:border-separate after:border-solid after:border-white/10 after:left-0 after:top-0 after:font-sans_serif"><div class="relative content-start items-start box-border caret-transparent gap-x-[15px] flex flex-col shrink-0 h-min justify-center gap-y-[15px] w-full overflow-hidden"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-start gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-7.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] text-left text-nowrap font-outfit">Enterprises</p>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-full"><p class="text-white/70 text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Comprehensive solutions tailored for large-scale business success.</p>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><a href="https://cal.com/" class="relative text-blue-700 content-center items-center bg-indigo-600 shadow-[rgba(0,0,0,0.15)_0px_0.706592px_0.706592px_-0.625px,rgba(0,0,0,0.145)_0px_1.80656px_1.80656px_-1.25px,rgba(0,0,0,0.137)_0px_3.62176px_3.62176px_-1.875px,rgba(0,0,0,0.125)_0px_6.8656px_6.8656px_-2.5px,rgba(0,0,0,0.106)_0px_13.6468px_13.6468px_-3.125px,rgba(0,0,0,0.05)_0px_30px_30px_-3.75px] box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full px-[15px] py-2.5 rounded-lg after:accent-auto after:box-border after:caret-transparent after:text-blue-700 after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:rounded-lg after:border-separate after:border-solid after:border-white/10 after:left-0 after:top-0 after:font-sans_serif"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-[18px] justify-start gap-y-2.5 w-min overflow-hidden"><div class="relative content-end items-end self-stretch box-border caret-transparent gap-x-[5px] flex shrink-0 h-min justify-center gap-y-[5px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-[15px] box-border caret-transparent leading-[18px] text-center text-nowrap font-outfit">Schedule a call</p>
+</div>
+<div class="relative box-border caret-transparent shrink-0 h-4 w-4"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-3.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative content-end items-end self-stretch box-border caret-transparent gap-x-[5px] flex shrink-0 h-min justify-center gap-y-[5px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-[15px] box-border caret-transparent leading-[18px] text-center text-nowrap font-outfit">Schedule a call</p>
+</div>
+<div class="relative box-border caret-transparent shrink-0 h-4 w-4"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-4.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex flex-col shrink-0 h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">All Tier 1 &amp; 2 benefits</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Cinematic video production</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Weekly trend-based brand review</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">AI chat automation</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Full influencer management</p>
+</div>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="relative box-border caret-transparent shrink-0 w-full"><div class="relative content-center items-center box-border caret-transparent gap-x-2.5 flex h-min justify-center gap-y-2.5 w-full overflow-hidden"><div class="relative content-center items-center bg-white/20 box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-center gap-y-2.5 w-min overflow-hidden p-[5px] rounded-lg"><div class="relative box-border caret-transparent shrink-0 h-[15px] w-[15px]"><div class="box-border caret-transparent contents"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-5.svg" alt="Icon" class="text-white box-border caret-transparent inline-block shrink-0 h-full w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex basis-0 flex-col grow shrink-0 justify-start break-words w-px"><p class="text-white text-base font-light box-border caret-transparent tracking-[-0.32px] leading-[19.2px] break-words text-left font-outfit">Personalized lead generation</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[327px] left-[calc(47.6923%_-_153px)] order-[39] w-[306px] z-[1] overflow-clip bottom-[3835px]"><div class="absolute box-border caret-transparent shrink-0 z-[1] inset-0"><div class="absolute bg-slate-900 box-border caret-transparent gap-x-0 shrink-0 h-[273px] gap-y-0 overflow-hidden rounded-md bottom-0 inset-x-0"><div class="absolute box-border caret-transparent shrink-0 h-[657px] left-[-143px] top-[-15px] w-[652px]"><div class="box-border caret-transparent h-full w-full"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-8.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+<div class="absolute bg-violet-900 box-border caret-transparent blur-[108px] shrink-0 h-[513px] w-[548px] rounded-[72%] left-[263px] top-[195px]"></div>
+<div class="absolute box-border caret-transparent shrink-0 h-[473px] left-[-102px] w-[532px] top-[161px]"><div class="box-border caret-transparent h-full w-full"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-9.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent blur-[108px] shrink-0 h-[235px] w-[576px] rounded-[72%] left-[206px] top-[301px]"></div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-[0.749147_/_1] box-border caret-transparent shrink-0 mix-blend-lighten opacity-[0.14] right-[-11px] top-[-126px] left-0"><div class="absolute box-border caret-transparent inset-0"><img sizes="317px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/36.jpg" alt="" class="aspect-[auto_1200_/_1604] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[81px] w-[156px] left-[131px] bottom-5"><div class="text-gray-200 text-[64px] font-bold items-center box-border caret-transparent gap-x-1 flex justify-center gap-y-1 font-satoshi"><span class="text-green-500 box-border caret-transparent block"></span>
+<span class="box-border caret-transparent block">7</span>
+<span class="text-sky-500 box-border caret-transparent block">+</span>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-6 top-[25px]"><p class="text-white text-[21px] font-semibold box-border caret-transparent leading-[20.8226px] capitalize text-nowrap font-poppins">Client Served</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-6 top-16"><p class="text-white text-sm font-semibold box-border caret-transparent leading-[20.8226px] capitalize text-nowrap font-poppins">Partnering with Businesses</p>
+<p class="text-white text-sm font-semibold box-border caret-transparent leading-[20.8226px] capitalize text-nowrap font-poppins">to Achieve outstanding Results </p>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[81px] left-[calc(51.6923%_-_45.165px)] top-[-1383px] w-[90px]"><div class="text-gray-200 text-[64px] font-bold items-center box-border caret-transparent gap-x-1 flex justify-center gap-y-1 font-satoshi"><span class="text-green-500 box-border caret-transparent block">+</span>
+<span class="box-border caret-transparent block">0</span>
+<span class="text-sky-500 box-border caret-transparent block"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 h-[122px] justify-start left-[calc(51.2821%_-_160px)] order-[40] break-words top-[calc(53.3624%_-_61px)] w-80 z-[1]"><p class="text-white text-[59px] font-extrabold box-border caret-transparent leading-[184.684px] break-words capitalize font-plus_jakarta_sans">About <span class="text-violet-400 box-border caret-transparent break-words">Us</span>
+</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 h-[125px] justify-start order-[43] break-words w-[369px] z-[1] right-0 bottom-[2044px]"><p class="text-white text-[46px] box-border caret-transparent leading-[184.684px] break-words capitalize font-instrument_serif">Meet the Founder</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 h-[156px] justify-start left-[calc(52.3077%_-_163.5px)] order-[41] break-words top-[calc(55.1684%_-_78px)] w-[327px] z-[1]"><p class="text-white text-lg box-border caret-transparent tracking-[0.36px] leading-[55.8px] break-words font-poppins">The Results Speaks for Themselves</p>
+<p class="text-white text-[13px] box-border caret-transparent tracking-[-0.26px] leading-[15.8322px] break-words text-justify capitalize font-plus_jakarta_sans">We’re more than a digital marketing agency</p>
+<p class="text-white text-[13px] box-border caret-transparent tracking-[-0.26px] leading-[15.8322px] break-words text-justify capitalize font-plus_jakarta_sans">we’re your growth partner, delivering measurable results with tailored strategies and cutting-edge tools.</p>
+</div>
+<div class="relative self-start backdrop-blur-[3px] box-border caret-transparent gap-x-0 shrink-0 h-[85px] justify-self-start order-[55] gap-y-0 w-full z-[1]"><div class="absolute content-center items-center box-border caret-transparent gap-x-[6.75px] flex shrink-0 h-[82px] justify-start gap-y-[6.75px] w-[85px] left-[13px] top-0.5"></div>
+<div class="absolute box-border caret-transparent shrink-0 h-[49px] w-[203px] overflow-clip left-[1084px] top-[19px]"><a href="https://wa.me/9443394439" class="absolute text-blue-700 box-border caret-transparent block shrink-0 h-12 top-0 inset-x-0"></a>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent shrink-0 h-[391px] left-[calc(50%_-_174.465px)] order-[42] w-[349px] z-[1] rounded-lg bottom-[1634px]"><div class="absolute box-border caret-transparent rounded-lg inset-0"><img sizes="348.93px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/55.png" alt="" class="aspect-[auto_1728_/_1932] box-border caret-transparent h-full w-full rounded-lg" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 h-[125px] justify-start left-[calc(50%_-_184.5px)] order-[44] break-words w-[369px] z-[1] bottom-[1494px]"><p class="text-white text-[56px] font-semibold box-border caret-transparent tracking-[-0.56px] leading-[67.6836px] break-words capitalize font-plus_jakarta_sans">Kailash Vicky</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 h-[408px] justify-start left-[calc(49.4872%_-_176.5px)] order-[45] break-words w-[353px] z-[1] bottom-[1106px]"><p class="text-white text-[23px] font-semibold box-border caret-transparent tracking-[-0.69px] leading-[33.5561px] break-words text-justify capitalize font-plus_jakarta_sans">Over 6 years in media as a prime-time RJ and Social Media Manager. Awarded &#39;Best Employee&#39; for high-impact campaigns. Built 100K+ organic followers on personal Instagram and grew brand presence to 600K+ across platforms. Skilled in influencer collaborations, digital strategy, and storytelling to turn audiences into loyal communities.</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start order-[46] text-nowrap translate-x-[-50.0%] z-[1] left-2/4 bottom-[764px]"><p class="text-[68px] box-border caret-transparent tracking-[-1.36px] leading-[68px] text-center uppercase text-nowrap font-anton"><span class="bg-clip-text bg-[linear-gradient(181deg,rgb(255,255,255)_0%,rgb(15,12,21)_100%)] box-border caret-transparent inline-block text-nowrap pr-[-50%] mb-[-] ml-[44.2px)] mr-[50%] mt-[min(0px,] pl-[44.2px)] pt-[max(0px,] pb-[+]">Ready To Grow</span>
+</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start order-[47] text-nowrap translate-x-[-50.0%] z-[1] left-2/4 bottom-[734px]"><p class="text-[33px] box-border caret-transparent tracking-[-0.66px] leading-[33px] text-center uppercase text-nowrap font-anton"><span class="bg-clip-text bg-[linear-gradient(178deg,rgb(255,255,255)_0%,rgb(177,74,187)_86.5385%,rgb(208,28,230)_100%)] box-border caret-transparent inline-block text-nowrap pr-[-50%] mb-[-] ml-[21.45px)] mr-[50%] mt-[min(0px,] pl-[21.45px)] pt-[max(0px,] pb-[+]">your bussiness with Reach360</span>
+</p>
+</div>
+<div class="absolute bottom-[-94px] box-border caret-transparent shrink-0 h-[833px] left-[-247px] order-[48] right-[-246px] z-[1]"><div class="box-border caret-transparent h-full w-full"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-10.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+<div class="absolute box-border caret-transparent gap-x-0 shrink-0 h-px order-[49] right-[-7px] gap-y-0 z-[1] -left-10 bottom-[359px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap top-[-319px] translate-x-[-50.0%] left-[49%]"><p class="text-white text-[10px] font-semibold box-border caret-transparent tracking-[-0.2px] leading-3 text-center capitalize text-nowrap font-poppins">Get in Touch</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 h-[24%] justify-start text-nowrap top-[-282px] translate-x-[-50.0%] left-[53%]"><p class="text-white text-[25px] box-border caret-transparent tracking-[-0.5px] leading-[28.0378px] capitalize text-nowrap font-instrument_serif">Let’s Bring Your vision To LIfe!</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap top-[-222px] left-[91px]"><p class="text-white text-[10px] font-semibold box-border caret-transparent tracking-[-0.2px] leading-3 text-center capitalize text-nowrap font-poppins"></p>
+</div>
+<div class="absolute box-border caret-transparent gap-x-0 shrink-0 h-[17px] gap-y-0 top-[-235px] w-[88px] left-[214px]"><div class="absolute box-border caret-transparent shrink-0 overflow-hidden rounded-bl rounded-br rounded-tl rounded-tr inset-0"></div>
+</div>
+<div class="absolute box-border caret-transparent gap-x-0 shrink-0 h-[17px] gap-y-0 top-[-200px] w-[88px] left-[214px]"></div>
+<div class="absolute box-border caret-transparent gap-x-0 shrink-0 h-[17px] gap-y-0 top-[-200px] w-[88px] left-[297px]"></div>
+<div class="absolute box-border caret-transparent gap-x-0 shrink-0 h-[17px] gap-y-0 top-[-235px] w-[88px] left-[297px]"><div class="absolute box-border caret-transparent shrink-0 overflow-hidden rounded-bl rounded-br rounded-tl rounded-tr inset-0"></div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-4 top-[-108px] w-[49px] left-60"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[7px] top-1"><p class="text-[5px] font-semibold box-border caret-transparent tracking-[-0.1px] leading-[6px] capitalize text-nowrap font-poppins">Send Message</p>
+</div>
+</div>
+<div class="absolute bottom-[-155px] box-border caret-transparent shrink-0 h-0.5 right-[-5px] left-0"><div class="box-border caret-transparent h-full w-full"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-11.svg" alt="Icon" class="box-border caret-transparent h-full w-full" />
+</div>
+</div>
+<div class="absolute content-center items-center bottom-[-202px] box-border caret-transparent gap-x-[1.93px] flex shrink-0 h-min justify-start gap-y-[1.93px] w-min left-[58px]"><div class="box-border caret-transparent contents"><div class="relative aspect-[1.04162_/_1] box-border caret-transparent shrink-0 w-[34px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="33.8px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/48.png" alt="" class="aspect-[auto_851_/_817] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="relative box-border caret-transparent flex flex-col shrink-0 h-8 justify-start break-words w-[74px]"><p class="text-white text-xl box-border caret-transparent leading-6 break-words uppercase font-affigere">Reach 360</p>
+<p class="text-white text-[9px] box-border caret-transparent leading-[1.8px] break-words uppercase font-affigere">Your Digital Partner</p>
+</div>
+</div>
+<div class="absolute bottom-[-242px] box-border caret-transparent flex flex-col shrink-0 justify-start break-words w-[141px] left-[72px]"><p class="text-white text-[7px] font-semibold box-border caret-transparent leading-[10.5431px] break-words capitalize font-poppins">A Creative Agency driven by passion for bold ideas, thoughful design &amp; transformative Storytelling </p>
+</div>
+<div class="absolute bottom-[-117px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[319px]"><p class="text-white text-[23px] box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-instrument_serif">Reach 360</p>
+</div>
+<div class="absolute bottom-[-210px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[291px]"><p class="text-white text-[8px] font-semibold box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-poppins">About us</p>
+</div>
+<div class="absolute bottom-[-229px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[291px]"><p class="text-white text-[8px] font-semibold box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-poppins">Pricing</p>
+</div>
+<div class="absolute bottom-[-245px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[291px]"><p class="text-white text-[8px] font-semibold box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-poppins">Services</p>
+</div>
+<div class="absolute bottom-[-245px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[369px]"><p class="text-white text-[8px] font-semibold box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-poppins">Contact Us</p>
+</div>
+<div class="absolute bottom-[-229px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[369px]"><p class="text-white text-[8px] font-semibold box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-poppins">Blog</p>
+</div>
+<div class="absolute bottom-[-210px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[369px]"><p class="text-white text-[8px] font-semibold box-border caret-transparent leading-[10.5431px] capitalize text-nowrap font-poppins">Portfolio</p>
+</div>
+<div class="absolute bottom-[-121px] box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[88px]"><p class="text-white text-sm font-semibold box-border caret-transparent leading-[19.4717px] capitalize text-nowrap font-poppins">94433 94439</p>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-square bottom-[-142px] box-border caret-transparent shrink-0 w-[17px] left-[338px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/34.png" alt="" class="aspect-[auto_512_/_512] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-square bottom-[-118px] box-border caret-transparent shrink-0 w-[17px] left-[67px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/34.png" alt="" class="aspect-[auto_512_/_512] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-square bottom-[-153px] box-border caret-transparent shrink-0 w-[38px] left-[57px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/33.png" alt="" class="aspect-[auto_512_/_512] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-square bottom-[-154px] box-border caret-transparent shrink-0 w-[43px] left-[346px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/33.png" alt="" class="aspect-[auto_512_/_512] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[87px] -bottom-36"><p class="text-white text-sm font-semibold box-border caret-transparent leading-[19.4717px] lowercase text-nowrap font-poppins">reach360d@gmail.com</p>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute aspect-square bottom-[-142px] box-border caret-transparent shrink-0 w-4 left-[319px]"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/24.png" alt="" class="aspect-[auto_188_/_188] box-border caret-transparent h-full w-full" />
+</div>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[308px] left-[calc(49.4872%_-_185px)] order-[50] w-[370px] z-[1] overflow-clip bottom-[293px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap z-[1] left-0 top-0"><p class="text-white text-[0px] font-semibold box-border caret-transparent leading-[0px] capitalize text-nowrap font-poppins">Email*</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[43px] top-5"><p class="text-white text-[10px] font-semibold box-border caret-transparent tracking-[-0.2px] leading-3 capitalize text-nowrap font-poppins">Name*</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[43px] top-[90px]"><p class="text-white text-[10px] font-semibold box-border caret-transparent tracking-[-0.2px] leading-3 capitalize text-nowrap font-poppins">Email*</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap translate-y-[-50.0%] left-[43px] top-[54%]"><p class="text-white text-[10px] font-semibold box-border caret-transparent tracking-[-0.2px] leading-3 capitalize text-nowrap font-poppins">Mobile Number*</p>
+</div>
+<div class="absolute bg-zinc-400/20 box-border caret-transparent shrink-0 h-7 left-[calc(49.7297%_-_140.5px)] w-[281px] overflow-hidden rounded-[6.92px] top-[41px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:border-zinc-500/10 after:rounded-[6.92px] after:border-separate after:border-solid after:left-0 after:top-0 after:font-sans_serif"><input type="email" name="Email" placeholder="Enter Full Name" value="" class="text-neutral-400 text-[9.69px] bg-transparent box-border caret-transparent h-full leading-[11.628px] text-ellipsis text-nowrap w-full bg-[position:0px_0px] p-[8.31px] font-inter" />
+</div>
+<div class="absolute bg-zinc-400/20 box-border caret-transparent shrink-0 h-7 left-[calc(49.7297%_-_140.5px)] w-[281px] overflow-hidden rounded-[6.92px] top-[111px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:border-zinc-500/10 after:rounded-[6.92px] after:border-separate after:border-solid after:left-0 after:top-0 after:font-sans_serif"><input type="email" name="Email" placeholder="jane@framer.com" value="" class="text-neutral-400 text-[9.69px] bg-transparent box-border caret-transparent h-full leading-[11.628px] text-ellipsis text-nowrap w-full bg-[position:0px_0px] p-[8.31px] font-inter" />
+</div>
+<div class="absolute bg-zinc-400/20 box-border caret-transparent shrink-0 h-7 left-[calc(49.7297%_-_140.5px)] w-[281px] overflow-hidden rounded-[6.92px] bottom-[99px] after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:border-zinc-500/10 after:rounded-[6.92px] after:border-separate after:border-solid after:left-0 after:top-0 after:font-sans_serif"><input type="tel" name="Email" placeholder="+91" value="" class="text-neutral-400 text-[9.69px] bg-transparent box-border caret-transparent h-full leading-[11.628px] text-ellipsis text-nowrap w-full bg-[position:0px_0px] p-[8.31px] font-inter" />
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap left-[1281px] top-[125px]"><p class="text-white text-[19px] font-semibold box-border caret-transparent tracking-[-0.38px] leading-[22.8px] capitalize text-nowrap font-poppins">Phone Number</p>
+</div>
+<div class="absolute bg-zinc-400/20 box-border caret-transparent shrink-0 h-[51px] w-[305px] overflow-hidden rounded-[12.72px] left-[1285px] top-40 after:accent-auto after:box-border after:caret-transparent after:text-black after:block after:text-xs after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[normal] after:leading-[normal] after:list-outside after:list-disc after:absolute after:text-start after:indent-[0px] after:normal-case after:visible after:w-full after:border after:border-zinc-500/10 after:rounded-[12.72px] after:border-separate after:border-solid after:left-0 after:top-0 after:font-sans_serif"><input type="text" name="Name" placeholder="+91" value="" class="text-neutral-400 text-[17.81px] bg-transparent box-border caret-transparent h-full leading-[21.372px] text-ellipsis text-nowrap w-full bg-[position:0px_0px] p-[15.27px] font-inter" />
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent shrink-0 h-10 left-[calc(48.6487%_-_120px)] w-60 bottom-[35px]"><a href="mailto://someone@example.com" class="relative text-blue-700 content-center items-center bg-zinc-800 box-border caret-transparent gap-x-0 flex h-full justify-center gap-y-0 w-full rounded-[10px]"><div class="relative box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap"><p class="text-white text-sm font-semibold box-border caret-transparent leading-[16.8px] text-nowrap font-inter">Submit</p>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[702px] left-[calc(49.4872%_-_181px)] order-[53] w-[362px] z-[1] bottom-[2194px]"><video src="https://framerusercontent.com/assets/iO9mxNnQRKLVwitWtMw4bVp9Fw.mp4" loop="" preload="auto" poster="https://c.animaapp.com/mgaefhdenHSxR5/assets/46.png" muted="" playsinline="" autoplay="" class="box-border caret-transparent h-full object-cover w-full rounded-[20px]"></video>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[209px] left-[calc(49.2308%_-_185.57px)] order-[54] w-[371px] z-[1] overflow-clip bottom-[879px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap right-0 bottom-[57px]"><p class="text-white text-[11px] font-semibold box-border caret-transparent leading-[13.6371px] text-center text-nowrap font-poppins">Let’s Create Something extraordinary Together. From Strategy</p>
+<p class="text-white text-[11px] font-semibold box-border caret-transparent leading-[13.6371px] text-center text-nowrap font-poppins">and Design to execution, We’ll partner with you every step of the </p>
+<p class="text-white text-[11px] font-semibold box-border caret-transparent leading-[13.6371px] text-center text-nowrap font-poppins">way to bring your vision to life</p>
+</div>
+<a href="https://wa.me/9443394439" class="absolute text-blue-700 bg-white box-border caret-transparent block shrink-0 h-7 left-[calc(51.752%_-_48.985px)] w-[98px] rounded-md bottom-[18px]"></a>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap translate-x-[-50.0%] left-[51%] bottom-[25px]"><p class="text-[11px] font-semibold box-border caret-transparent leading-[13.6371px] text-center text-nowrap font-poppins">Start Work</p>
+</div>
+<div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap translate-x-[-50.0%] left-[51%] top-2.5"><p class="text-white text-[25px] box-border caret-transparent leading-[40.1617px] text-center text-nowrap font-instrument_serif"><span class="text-[47px] box-border caret-transparent text-nowrap">Let’s Make </span>
+<br class="box-border caret-transparent text-nowrap" />
+<span class="text-[47px] box-border caret-transparent text-nowrap">Something Great</span>
+</p>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start mix-blend-lighten order-[57] break-words translate-x-[-50.0%] w-[359px] z-[1] left-[49%] top-[423px]"><p class="text-white text-[53px] font-extrabold box-border caret-transparent leading-[61.9455px] break-words capitalize font-plus_jakarta_sans"><span class="box-border caret-transparent inline-block break-words">Your</span>
+<span class="box-border caret-transparent inline-block break-words">Success</span>
+<span class="box-border caret-transparent inline-block break-words"></span>
+</p>
+<p class="text-white text-[53px] font-extrabold box-border caret-transparent leading-[61.9455px] break-words capitalize font-plus_jakarta_sans"><span class="box-border caret-transparent inline-block break-words">Our</span>
+<span class="box-border caret-transparent inline-block break-words">Strategy</span>
+</p>
+</div>
+</div>
+<div class="box-border caret-transparent contents"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start order-[58] break-words translate-x-[-50.0%] w-[357px] z-[1] left-2/4 top-[570px]"><p class="text-white text-[23px] font-semibold box-border caret-transparent leading-[33.7713px] break-words capitalize font-poppins"><span class="box-border caret-transparent inline-block break-words">Elevate</span>
+<span class="box-border caret-transparent inline-block break-words">Your</span>
+<span class="box-border caret-transparent inline-block break-words">Digital</span>
+<span class="box-border caret-transparent inline-block break-words">Presence</span>
+<span class="box-border caret-transparent inline-block break-words"></span>
+<br class="box-border caret-transparent break-words" />
+<span class="box-border caret-transparent inline-block break-words">with</span>
+<span class="box-border caret-transparent inline-block break-words"></span>
+<span class="text-fuchsia-500 box-border caret-transparent break-words"><span class="box-border caret-transparent inline-block break-words">Reach</span>
+<span class="box-border caret-transparent inline-block break-words">360</span>
+</span>
+</p>
+</div>
+</div>
+<div class="absolute aspect-[1.02041_/_1] box-border caret-transparent shrink-0 order-[59] w-[592px] z-[1] left-[913px] top-[155px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="592px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/47.png" alt="" class="aspect-[auto_1000_/_980] box-border caret-transparent h-full object-cover w-full" />
+</div>
+<div class="absolute aspect-square box-border caret-transparent gap-x-2.5 shrink-0 gap-y-2.5 w-[133px] left-[441px] top-7"><div class="absolute box-border caret-transparent inset-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/37.png" alt="" class="aspect-[auto_400_/_400] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+<div class="absolute aspect-[1.15426_/_1] box-border caret-transparent shrink-0 left-[-27px] w-[120px] bottom-[54px]"><div class="absolute box-border caret-transparent inset-0"><img sizes="120.08px" src="https://c.animaapp.com/mgaefhdenHSxR5/assets/32.png" alt="" class="aspect-[auto_572_/_496] box-border caret-transparent h-full object-cover w-full" />
+</div>
+</div>
+</div>
+<div class="absolute box-border caret-transparent shrink-0 h-[136px] order-[60] w-[406px] z-[1] overflow-clip -right-0.5 top-[3516px]"><div class="absolute box-border caret-transparent flex flex-col shrink-0 justify-start text-nowrap translate-x-[-50.0%] translate-y-[-50.0%] left-2/4 top-2/4"><p class="text-white text-[33px] font-bold box-border caret-transparent leading-[39.6px] text-nowrap font-inter">Our Tariffs</p>
+</div>
+</div>
+</div>
+<div class="box-border caret-transparent"></div>
+</div>
+<div class="fixed box-border caret-transparent flex justify-end w-full z-[2147483647] p-5 bottom-0"><a href="https://www.framer.com/" title="Create a free website with Framer, the website builder loved by startups, designers and agencies." class="relative text-blue-700 box-border caret-transparent gap-x-2.5 block h-[38px] gap-y-2.5 w-[140px]"><div class="absolute bg-white shadow-[rgba(0,0,0,0.17)_0px_0.602187px_1.56569px_-1.5px,rgba(0,0,0,0.14)_0px_2.28853px_5.95019px_-3px,rgba(0,0,0,0.02)_0px_10px_26px_-4.5px] box-border caret-transparent shrink-0 overflow-hidden rounded-[10px] inset-px"></div>
+<div class="absolute content-center items-center box-border caret-transparent gap-x-2.5 flex shrink-0 h-min justify-start gap-y-2.5 translate-x-[-50.0%] translate-y-[-50.0%] w-min left-2/4 top-2/4"><div class="relative box-border caret-transparent shrink-0 h-4 w-3"><div class="[mask-image:url(data:image/svg+xml,<svg%20display=\%22block\%22%20role=\%22presentation\%22%20viewBox=\%220%200%2012%2020\%22%20xmlns=\%22http://www.w3.org/2000/svg\%22><path%20d=\%22M%200%200%20L%2012%200%20L%2012%206%20L%206%206%20Z%20M%200%206%20L%206%206%20L%2012%2012%20L%206%2012%20L%206%2018%20L%200%2012%20Z\%22%20fill=\%22var%28--1bd4d3i,%20rgb%280,%200,%200)] absolute aspect-[0.6_/_1] bg-black box-border caret-transparent shrink-0 [mask-clip:border-box,border-box] [mask-composite:add,add] [mask-mode:match-source,match-source] [mask-origin:border-box,border-box] [mask-repeat:no-repeat,no-repeat] [mask-size:auto,auto] translate-x-[-50.0%] w-3 [mask-position:50%,50%] left-2/4 -top-0.5"></div>
+</div>
+<p class="absolute box-border caret-transparent scale-[0.001px]">Create a free website with Framer, the website builder loved by startups, designers and agencies.</p>
+<div class="[mask-image:url(data:image/svg+xml,<svg%20display=\%22block\%22%20role=\%22presentation\%22%20viewBox=\%220%200%2097%2010\%22%20xmlns=\%22http://www.w3.org/2000/svg\%22><path%20d=\%22M%2091.736%209.781%20L%2091.736%202.818%20L%2093.316%202.818%20L%2093.316%203.98%20L%2093.374%203.98%20C%2093.501%203.577%2093.714%203.269%2094.014%203.053%20C%2094.328%202.833%2094.704%202.72%2095.087%202.729%20C%2095.185%202.729%2095.287%202.733%2095.392%202.742%20C%2095.498%202.75%2095.587%202.759%2095.659%202.767%20L%2095.659%204.253%20C%2095.552%204.23%2095.444%204.215%2095.335%204.209%20C%2095.188%204.192%2095.039%204.184%2094.891%204.184%20C%2094.603%204.184%2094.343%204.247%2094.11%204.374%20C%2093.882%204.497%2093.702%204.674%2093.57%204.907%20C%2093.434%205.16%2093.366%205.445%2093.374%205.732%20L%2093.374%209.782%20L%2091.736%209.782%20Z%20M%2087.286%209.927%20C%2086.588%209.927%2085.985%209.779%2085.477%209.483%20C%2084.969%209.183%2084.577%208.761%2084.303%208.22%20C%2084.032%207.678%2083.897%207.048%2083.897%206.328%20C%2083.897%205.618%2084.032%204.988%2084.303%204.443%20C%2084.56%203.917%2084.96%203.475%2085.458%203.167%20C%2085.953%202.858%2086.531%202.704%2087.191%202.704%20C%2087.64%202.704%2088.059%202.78%2088.448%202.932%20C%2088.841%203.08%2089.186%203.305%2089.482%203.605%20C%2089.779%203.901%2090.009%204.272%2090.174%204.715%20C%2090.344%205.155%2090.428%205.67%2090.428%206.258%20L%2090.428%206.748%20L%2084.627%206.748%20L%2084.627%205.629%20L%2089.609%205.629%20L%2088.86%205.946%20C%2088.868%205.594%2088.801%205.243%2088.664%204.918%20C%2088.549%204.641%2088.355%204.404%2088.105%204.238%20C%2087.86%204.074%2087.559%203.991%2087.204%203.991%20C%2086.852%203.991%2086.55%204.074%2086.296%204.239%20C%2086.042%204.404%2085.847%204.629%2085.712%204.912%20C%2085.576%205.213%2085.509%205.54%2085.515%205.87%20L%2085.515%206.62%20C%2085.515%207.047%2085.587%207.413%2085.731%207.717%20C%2085.879%208.017%2086.089%208.248%2086.359%208.409%20C%2086.63%208.566%2086.948%208.644%2087.312%208.644%20C%2087.562%208.644%2087.786%208.608%2087.984%208.536%20C%2088.177%208.467%2088.353%208.356%2088.499%208.212%20C%2088.642%208.072%2088.749%207.906%2088.816%207.711%20L%2090.326%207.921%20C%2090.228%208.313%2090.032%208.673%2089.756%208.968%20C%2089.476%209.268%2089.125%209.503%2088.702%209.672%20C%2088.282%209.842%2087.811%209.926%2087.286%209.926%20Z%20M%2072.643%209.781%20L%2072.643%202.818%20L%2074.191%202.818%20L%2074.235%204.443%20L%2074.115%204.443%20C%2074.225%204.041%2074.385%203.713%2074.597%203.459%20C%2074.798%203.212%2075.055%203.016%2075.347%202.888%20C%2075.63%202.761%2075.928%202.698%2076.241%202.698%20C%2076.753%202.698%2077.177%202.854%2077.511%203.167%20C%2077.849%203.48%2078.074%203.922%2078.184%204.494%20L%2077.987%204.494%20C%2078.066%204.132%2078.232%203.795%2078.469%203.51%20C%2078.691%203.248%2078.972%203.041%2079.289%202.907%20C%2079.615%202.766%2079.968%202.695%2080.323%202.697%20C%2080.746%202.697%2081.127%202.79%2081.465%202.977%20C%2081.808%203.159%2082.077%203.429%2082.272%203.789%20C%2082.47%204.149%2082.57%204.591%2082.57%205.116%20L%2082.57%209.781%20L%2080.939%209.781%20L%2080.939%205.363%20C%2080.939%204.923%2080.818%204.602%2080.577%204.398%20C%2080.333%204.19%2080.021%204.08%2079.701%204.088%20C%2079.434%204.088%2079.204%204.145%2079.009%204.258%20C%2078.816%204.371%2078.66%204.536%2078.559%204.735%20C%2078.449%204.953%2078.394%205.195%2078.399%205.439%20L%2078.399%209.781%20L%2076.813%209.781%20L%2076.813%205.287%20C%2076.813%204.923%2076.698%204.633%2076.47%204.417%20C%2076.246%204.197%2075.958%204.087%2075.606%204.087%20C%2075.366%204.087%2075.143%204.145%2074.94%204.259%20C%2074.737%204.374%2074.569%204.543%2074.458%204.748%20C%2074.339%204.963%2074.28%205.23%2074.28%205.548%20L%2074.28%209.781%20L%2072.642%209.781%20Z%20M%2067.291%209.915%20C%2066.724%209.915%2066.221%209.771%2065.781%209.483%20C%2065.344%209.191%2065%208.776%2064.746%208.239%20C%2064.496%207.701%2064.371%207.059%2064.371%206.309%20C%2064.371%205.552%2064.498%204.904%2064.752%204.367%20C%2065.01%203.829%2065.359%203.419%2065.799%203.135%20C%2066.244%202.851%2066.763%202.703%2067.291%202.71%20C%2067.668%202.71%2067.987%202.771%2068.25%202.894%20C%2068.516%203.013%2068.736%203.164%2068.91%203.351%20C%2069.083%203.533%2069.22%203.719%2069.322%203.91%20L%2069.38%203.91%20L%2069.38%202.818%20L%2070.998%202.818%20L%2070.998%209.781%20L%2069.38%209.781%20L%2069.38%208.696%20L%2069.322%208.696%20C%2069.211%208.908%2069.07%209.102%2068.903%209.273%20C%2068.726%209.46%2068.503%209.614%2068.237%209.737%20C%2067.938%209.863%2067.615%209.923%2067.291%209.915%20Z%20M%2067.723%208.563%20C%2068.078%208.563%2068.383%208.469%2068.637%208.283%20C%2068.901%208.079%2069.101%207.804%2069.215%207.49%20C%2069.35%207.147%2069.418%206.751%2069.418%206.303%20C%2069.418%205.85%2069.35%205.456%2069.214%205.123%20C%2069.103%204.811%2068.902%204.539%2068.637%204.341%20C%2068.387%204.155%2068.083%204.062%2067.723%204.062%20C%2067.363%204.062%2067.058%204.155%2066.809%204.342%20C%2066.559%204.528%2066.369%204.788%2066.237%205.122%20C%2066.107%205.456%2066.041%205.85%2066.041%206.302%20C%2066.041%206.752%2066.106%207.145%2066.237%207.483%20C%2066.369%207.822%2066.559%208.086%2066.809%208.277%20C%2067.063%208.467%2067.367%208.563%2067.723%208.563%20Z%20M%2059.909%209.781%20L%2059.909%202.818%20L%2061.489%202.818%20L%2061.489%203.98%20L%2061.546%203.98%20C%2061.673%203.577%2061.887%203.269%2062.188%203.053%20C%2062.488%202.837%2062.846%202.729%2063.26%202.729%20C%2063.358%202.729%2063.46%202.733%2063.565%202.742%20C%2063.671%202.75%2063.76%202.759%2063.832%202.767%20L%2063.832%204.253%20C%2063.725%204.23%2063.617%204.215%2063.508%204.209%20C%2063.361%204.192%2063.212%204.184%2063.064%204.184%20C%2062.776%204.184%2062.516%204.247%2062.283%204.374%20C%2062.054%204.497%2061.875%204.674%2061.743%204.907%20C%2061.607%205.16%2061.539%205.445%2061.546%205.732%20L%2061.546%209.782%20L%2059.909%209.782%20Z%20M%2052.647%209.781%20L%2052.647%200.323%20L%2058.804%200.323%20L%2058.804%201.758%20L%2054.336%201.758%20L%2054.336%204.513%20L%2058.411%204.513%20L%2058.411%205.928%20L%2054.336%205.928%20L%2054.336%209.781%20Z%20M%2043.265%205.744%20L%2043.265%209.781%20L%2041.628%209.781%20L%2041.628%202.818%20L%2043.195%202.818%20L%2043.215%204.551%20L%2043.024%204.551%20C%2043.223%203.946%2043.517%203.489%2043.906%203.18%20C%2044.296%202.867%2044.78%202.71%2045.36%202.71%20C%2045.842%202.71%2046.263%202.814%2046.623%203.021%20C%2046.987%203.228%2047.268%203.531%2047.467%203.929%20C%2047.67%204.322%2047.772%204.805%2047.772%205.376%20L%2047.772%209.781%20L%2046.141%209.781%20L%2046.141%205.63%20C%2046.141%205.147%2046.018%204.775%2045.773%204.513%20C%2045.531%204.246%2045.195%204.113%2044.763%204.113%20C%2044.475%204.113%2044.217%204.176%2043.989%204.303%20C%2043.762%204.429%2043.576%204.619%2043.456%204.849%20C%2043.329%205.09%2043.266%205.389%2043.266%205.744%20Z%20M%2038.353%209.781%20L%2038.353%202.818%20L%2039.99%202.818%20L%2039.99%209.781%20L%2038.352%209.781%20Z%20M%2039.171%201.815%20C%2038.919%201.821%2038.675%201.728%2038.491%201.555%20C%2038.31%201.389%2038.208%201.153%2038.212%200.907%20C%2038.208%200.663%2038.31%200.43%2038.492%200.267%20C%2038.674%200.091%2038.918%20-0.005%2039.171%200%20C%2039.438%200%2039.664%200.088%2039.851%200.266%20C%2040.041%200.44%2040.136%200.653%2040.136%200.907%20C%2040.136%201.161%2040.041%201.377%2039.85%201.555%20C%2039.667%201.728%2039.423%201.821%2039.171%201.815%20Z%20M%2030.741%209.927%20C%2030.043%209.927%2029.44%209.779%2028.932%209.483%20C%2028.426%209.185%2028.018%208.746%2027.758%208.22%20C%2027.488%207.678%2027.352%207.048%2027.352%206.328%20C%2027.352%205.618%2027.487%204.988%2027.758%204.443%20C%2028.015%203.917%2028.415%203.475%2028.913%203.167%20C%2029.408%202.858%2029.986%202.704%2030.646%202.704%20C%2031.095%202.704%2031.514%202.78%2031.903%202.932%20C%2032.293%203.079%2032.646%203.308%2032.938%203.605%20C%2033.234%203.901%2033.464%204.272%2033.629%204.715%20C%2033.799%205.155%2033.883%205.67%2033.883%206.258%20L%2033.883%206.748%20L%2028.083%206.748%20L%2028.083%205.629%20L%2033.066%205.629%20L%2032.316%205.946%20C%2032.316%205.553%2032.251%205.21%2032.12%204.918%20C%2032.005%204.641%2031.811%204.404%2031.561%204.238%20C%2031.316%204.074%2031.015%203.991%2030.66%203.991%20C%2030.34%203.983%2030.024%204.069%2029.752%204.239%20C%2029.498%204.404%2029.303%204.629%2029.168%204.912%20C%2029.032%205.213%2028.965%205.54%2028.971%205.87%20L%2028.971%206.62%20C%2028.971%207.047%2029.043%207.413%2029.187%207.717%20C%2029.335%208.017%2029.545%208.248%2029.816%208.409%20C%2030.086%208.566%2030.404%208.644%2030.768%208.644%20C%2031.018%208.644%2031.242%208.608%2031.441%208.536%20C%2031.634%208.467%2031.809%208.356%2031.955%208.212%20C%2032.099%208.072%2032.205%207.906%2032.272%207.711%20L%2033.782%207.921%20C%2033.684%208.313%2033.488%208.673%2033.212%208.968%20C%2032.932%209.268%2032.581%209.503%2032.158%209.672%20C%2031.707%209.847%2031.226%209.934%2030.742%209.926%20Z%20M%2022.312%209.915%20C%2021.777%209.924%2021.251%209.774%2020.801%209.483%20C%2020.361%209.191%2020.016%208.776%2019.766%208.239%20C%2019.516%207.701%2019.392%207.059%2019.392%206.309%20C%2019.392%205.552%2019.519%204.904%2019.772%204.367%20C%2020.027%203.829%2020.374%203.419%2020.814%203.135%20C%2021.254%202.852%2021.751%202.71%2022.305%202.71%20C%2022.682%202.71%2023.001%202.771%2023.264%202.894%20C%2023.53%203.013%2023.748%203.164%2023.918%203.351%20C%2024.091%203.533%2024.228%203.721%2024.33%203.916%20L%2024.381%203.916%20L%2024.381%200.323%20L%2026.019%200.323%20L%2026.019%209.781%20L%2024.413%209.781%20L%2024.413%208.689%20L%2024.343%208.689%20C%2024.233%208.904%2024.091%209.101%2023.923%209.273%20C%2023.734%209.468%2023.51%209.626%2023.263%209.737%20C%2023.001%209.855%2022.684%209.915%2022.312%209.915%20Z%20M%2022.737%208.563%20C%2023.092%208.563%2023.397%208.469%2023.651%208.283%20C%2023.915%208.079%2024.115%207.804%2024.229%207.49%20C%2024.364%207.147%2024.432%206.751%2024.432%206.303%20C%2024.432%205.85%2024.364%205.456%2024.229%205.123%20C%2024.118%204.811%2023.917%204.539%2023.651%204.341%20C%2023.385%204.151%2023.064%204.053%2022.737%204.062%20C%2022.41%204.053%2022.089%204.152%2021.823%204.342%20C%2021.573%204.528%2021.383%204.79%2021.252%205.128%20C%2021.118%205.505%2021.054%205.903%2021.062%206.303%20C%2021.062%206.751%2021.127%207.145%2021.258%207.483%20C%2021.389%207.822%2021.58%208.086%2021.829%208.277%20C%2022.079%208.467%2022.381%208.563%2022.737%208.563%20Z%20M%2014.352%209.915%20C%2013.817%209.924%2013.291%209.774%2012.841%209.483%20C%2012.405%209.191%2012.061%208.776%2011.806%208.239%20C%2011.556%207.701%2011.432%207.059%2011.432%206.309%20C%2011.432%205.552%2011.559%204.904%2011.812%204.367%20C%2012.071%203.829%2012.42%203.419%2012.86%203.135%20C%2013.3%202.852%2013.797%202.71%2014.352%202.71%20C%2014.728%202.71%2015.048%202.771%2015.31%202.894%20C%2015.577%203.013%2015.797%203.164%2015.97%203.351%20C%2016.144%203.533%2016.281%203.719%2016.383%203.91%20L%2016.44%203.91%20L%2016.44%202.818%20L%2018.059%202.818%20L%2018.059%209.781%20L%2016.44%209.781%20L%2016.44%208.696%20L%2016.383%208.696%20C%2016.272%208.908%2016.131%209.102%2015.964%209.273%20C%2015.786%209.46%2015.564%209.614%2015.298%209.737%20C%2014.999%209.863%2014.676%209.923%2014.352%209.915%20Z%20M%2014.783%208.563%20C%2015.139%208.563%2015.443%208.469%2015.697%208.283%20C%2015.951%208.093%2016.144%207.828%2016.275%207.49%20C%2016.41%207.147%2016.478%206.751%2016.478%206.303%20C%2016.478%205.85%2016.41%205.456%2016.275%205.123%20C%2016.164%204.811%2015.963%204.539%2015.697%204.341%20C%2015.447%204.155%2015.143%204.062%2014.783%204.062%20C%2014.423%204.062%2014.119%204.155%2013.869%204.342%20C%2013.608%204.543%2013.41%204.813%2013.298%205.122%20C%2013.167%205.456%2013.101%205.85%2013.101%206.302%20C%2013.101%206.752%2013.167%207.145%2013.298%207.483%20C%2013.429%207.822%2013.62%208.086%2013.869%208.277%20C%2014.123%208.467%2014.428%208.563%2014.783%208.563%20Z%20M%200%209.781%20L%200%200.323%20L%202.507%200.323%20L%204.322%205.236%20C%204.382%205.418%204.452%205.646%204.532%205.922%20C%204.612%206.197%204.695%206.493%204.779%206.811%20C%204.864%207.124%204.942%207.428%205.014%207.725%20C%205.09%208.017%205.154%208.273%205.204%208.493%20L%204.843%208.493%20C%205.045%207.633%205.267%206.778%205.509%205.928%20C%205.589%205.648%205.662%205.418%205.725%205.236%20L%207.509%200.323%20L%2010.023%200.323%20L%2010.023%209.781%20L%208.347%209.781%20L%208.347%204.989%20C%208.35%204.443%208.358%203.897%208.372%203.351%20L%208.398%202.38%20C%208.406%202.054%208.412%201.743%208.417%201.447%20L%208.563%201.447%20C%208.473%201.773%208.379%202.107%208.277%202.45%20L%207.979%203.446%20C%207.886%203.764%207.795%204.056%207.706%204.322%20C%207.636%204.546%207.561%204.768%207.483%204.989%20L%205.719%209.781%20L%204.303%209.781%20L%202.513%204.989%20L%202.291%204.329%20C%202.198%204.04%202.107%203.75%202.018%203.459%20L%201.713%202.469%20C%201.613%202.129%201.514%201.788%201.415%201.447%20L%201.593%201.447%20C%201.597%201.73%201.603%202.035%201.612%202.361%20C%201.62%202.682%201.627%203.006%201.631%203.332%20C%201.639%203.654%201.646%203.958%201.65%204.246%20C%201.658%204.534%201.663%204.781%201.663%204.989%20L%201.663%209.781%20Z\%22%20fill=\%22var%28--1bd4d3i,%20rgb%280,%200,%200)] relative aspect-[9.7_/_1] bg-black box-border caret-transparent shrink-0 [mask-clip:border-box,border-box] [mask-composite:add,add] [mask-mode:match-source,match-source] [mask-origin:border-box,border-box] [mask-repeat:no-repeat,no-repeat] [mask-size:auto,auto] w-[97px] [mask-position:50%,50%]"></div>
+</div>
+<div class="[mask-image:linear-gradient(rgba(0,0,0,0)_65%,rgb(0,0,0)_100%)] absolute shadow-[rgb(0,0,0)_0px_0px_0px_1px_inset] box-border caret-transparent shrink-0 opacity-[0.06] rounded-[11px] inset-0"></div>
+<div class="absolute shadow-[rgb(0,0,0)_0px_0px_0px_1px_inset] box-border caret-transparent shrink-0 opacity-[0.04] rounded-[11px] inset-0"></div>
+</a>
+</div>
+<div class="absolute box-border caret-transparent h-0 w-0 z-0 overflow-hidden left-0 bottom-0"><img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-12.svg" alt="Icon" class="box-border caret-transparent h-[51px] w-[18px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-13.svg" alt="Icon" class="box-border caret-transparent h-[51px] w-[19px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-14.svg" alt="Icon" class="box-border caret-transparent h-[13px] w-[22px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-15.svg" alt="Icon" class="box-border caret-transparent h-[30px] w-[30px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-16.svg" alt="Icon" class="box-border caret-transparent h-[30px] w-[30px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-17.svg" alt="Icon" class="box-border caret-transparent h-[30px] w-[30px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-18.svg" alt="Icon" class="box-border caret-transparent h-[30px] w-[30px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-19.svg" alt="Icon" class="box-border caret-transparent h-[30px] w-[30px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-20.svg" alt="Icon" class="box-border caret-transparent h-[30px] w-[30px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-21.svg" alt="Icon" class="box-border caret-transparent h-[910px] w-[904px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-22.svg" alt="Icon" class="box-border caret-transparent h-[655px] w-[737px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-23.svg" alt="Icon" class="box-border caret-transparent h-[3358px] w-[3312px]" />
+<img src="https://c.animaapp.com/mgaefhdenHSxR5/assets/icon-24.svg" alt="Icon" class="box-border caret-transparent h-1.5 w-[1456px]" />
+</div>
+<iframe src="https://framer.com/edit?framerSiteId=7464dbd5ba18296b5fc84204f6010ff7176fca8bf8f1e87277351aacaae39d7c&source=reach360in.framer.website&features=%7B%22editorBarDisableFrameAncestorsSecurity%22%3Afalse%7D&loadStart=1759469030689" class="fixed box-border caret-transparent hidden h-[1000px] w-screen z-[2147483647] left-0 top-0"></iframe>
+</body>
+
+</html>
+
