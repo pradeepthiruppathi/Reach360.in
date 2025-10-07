@@ -206,48 +206,81 @@
 <section class="w-full flex flex-col items-center justify-center mt-4 z-10 relative">
   <span class="text-white/80 text-lg font-medium font-inter mb-2">Trusted By</span>
 
-  <!-- Wrapper with gradient mask -->
-  <div class="w-full relative overflow-hidden py-4" style="min-height:150px;">
-    <div class="flex flex-row items-center gap-20 px-4 animate-scroll-logos"
-         style="width: max-content;">
-      <img src="https://framerusercontent.com/images/4woksRfY8x2HtdXJb3zSvXD2Vk.png?scale-down-to=512&width=616&height=312" alt="Moesqua Murruku" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/CfBFZKfj8Nkf3oUe8Mcf9majctg.png?width=354&height=157" alt="Ramchand City Developers" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/7jBk9uuSsbGfBznpsU3Qh4qKvVE.png?scale-down-to=512&width=1080&height=1080" alt="Saras Birds & Exotic Animal Hospital" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/mqKgZzORLZarCoJ45DOLL1l6qqo.png?scale-down-to=512&width=1132&height=492" alt="Brindha Skin & Hair Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/2JCjigig5YcVwTkVQ9ULhqE.png?scale-down-to=512&width=1080&height=1080" alt="Rathna's Pet Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/RHTztPJxf9iiiq5LNNOobtjm2u4.png?scale-down-to=512&width=1280&height=1280" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
-      <!-- duplicate logos for seamless loop -->
-     <img src="https://framerusercontent.com/images/4woksRfY8x2HtdXJb3zSvXD2Vk.png?scale-down-to=512&width=616&height=312" alt="Moesqua Murruku" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/CfBFZKfj8Nkf3oUe8Mcf9majctg.png?width=354&height=157" alt="Ramchand City Developers" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/7jBk9uuSsbGfBznpsU3Qh4qKvVE.png?scale-down-to=512&width=1080&height=1080" alt="Saras Birds & Exotic Animal Hospital" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/mqKgZzORLZarCoJ45DOLL1l6qqo.png?scale-down-to=512&width=1132&height=492" alt="Brindha Skin & Hair Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/2JCjigig5YcVwTkVQ9ULhqE.png?scale-down-to=512&width=1080&height=1080" alt="Rathna's Pet Clinic" class="h-20 opacity-100 grayscale-0 transition duration-300" />
-      <img src="https://framerusercontent.com/images/RHTztPJxf9iiiq5LNNOobtjm2u4.png?scale-down-to=512&width=1280&height=1280" class="h-20 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300" />
-       </div>
-
-
-    <!-- Gradient overlay for fade effect -->
-    <div class="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-[#000] to-transparent pointer-events-none"></div>
-    <div class="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-[#000] to-transparent pointer-events-none"></div>
+  <!-- ====== CLIENT LOGO SCROLL SECTION ====== -->
+<section class="logo-scroll-section">
+  <div class="logo-slider">
+    <div class="logo-track">
+      <img src="logo1.png" alt="Client 1" />
+      <img src="logo2.png" alt="Client 2" />
+      <img src="logo3.png" alt="Client 3" />
+      <img src="logo4.png" alt="Client 4" />
+      <img src="logo5.png" alt="Client 5" />
+      <img src="logo6.png" alt="Client 6" />
+      <!-- Duplicate for infinite scroll -->
+      <img src="logo1.png" alt="Client 1" />
+      <img src="logo2.png" alt="Client 2" />
+      <img src="logo3.png" alt="Client 3" />
+      <img src="logo4.png" alt="Client 4" />
+      <img src="logo5.png" alt="Client 5" />
+      <img src="logo6.png" alt="Client 6" />
+    </div>
   </div>
-
-  <style>
-    /* Marquee animation */
-    @keyframes scroll-logos {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .animate-scroll-logos {
-      display: flex;
-      animation: scroll-logos 20s linear infinite;
-    }
-
-    .animate-scroll-logos:hover {
-      animation-play-state: paused;
-    }
-  </style>
 </section>
+/* ====== LOGO SCROLL SECTION ====== */
+<style>
+  .logo-scroll-section {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(20,0,20,0.7), #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.logo-slider {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  gap: 80px;
+  animation: scroll 25s linear infinite;
+}
+
+.logo-track img {
+  height: 60px;
+  filter: brightness(0.9);
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-track img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: brightness(1);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Optional subtle grid overlay like in your reference */
+.logo-scroll-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(transparent 97%, rgba(255,255,255,0.05) 100%), 
+                    linear-gradient(90deg, transparent 97%, rgba(255,255,255,0.05) 100%);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+</style>
 <!-- ======= OUR SERVICES SECTION START ======= -->
 <section class="services-section" id="Services">
   <style>
